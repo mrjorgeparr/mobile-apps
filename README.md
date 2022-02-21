@@ -1,6 +1,9 @@
 # mobile-apps
 Source code for mobile applications project done in UC3M
 
+# Ideas
+* Sistema de ranking
+
 ## About the data base SQL lite
 |BUSINESS| | |
 |----------|-|-|
