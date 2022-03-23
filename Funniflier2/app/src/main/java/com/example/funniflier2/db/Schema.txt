@@ -1,0 +1,34 @@
+
+Notation: 
+_p : primary key
+*: foreign key
+
+IMPORTANT CONSIDERATIONS
+All rows of all tables must be uniquely identifiable to maintain referential integrity, primary keys must be not null
+
+______________________________________________________________________
+
+This would be a simple first approach that covers all the things that we need to have in the project to opt for the max grade
+
+User(id_p, name, surname1, surname2, email)
+
+Business(id_p, CIF, type, address, latitude, schedule, longitude, keywords)
+
+Restaurant(business_id*{related to business UC|DC}, capability, menu)
+
+Hairdressers(business_id*{related to business UC|DC}, nbarbers)
+
+User_favourites(id_p, business_id*{related to business}, user_id*{related to user})
+
+
+
+
+Things to do:
+ - Define .java files for each of the relations
+ - Define that when new business is inserted it must be inserted correctly.
+ - Add a button in user view to add a business to favourites, must be done correctly following the schema.
+
+
+
+
+
