@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -73,6 +74,13 @@ public class BusinessActivity extends AppCompatActivity {
         return;
     }
 
+    public void goToMaps(View v) {
+        Intent intent2 = new Intent(this, MapsActivity.class);
+        Bundle bundle = new Bundle();
+        bundle.putInt("business_id", business_id);
+        intent2.putExtras(bundle);
+        this.startActivity(intent2);
+    }
     public void rate(View v){
         return;
     }
