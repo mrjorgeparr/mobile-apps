@@ -6,19 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".RegisterActivity">
 
-    
-
 
     <Button
         android:id="@+id/button1"
         android:layout_width="184dp"
         android:layout_height="116dp"
-        android:layout_marginStart="113dp"
+        android:layout_marginStart="112dp"
         android:onClick="onClick"
         android:text="Business"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteY="68dp" />
+        tools:layout_editor_absoluteY="119dp" />
 
     <Button
         android:id="@+id/button2"

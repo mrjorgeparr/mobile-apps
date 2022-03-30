@@ -6,7 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".Register_Customer">
 
-
     <EditText
         android:id="@+id/user_name"
         android:layout_width="422dp"

@@ -10,10 +10,19 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Funniflier2">
         <activity
+            android:name=".ProfileActivity"
+            android:exported="false" />
+        <activity
+            android:name=".BusinessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ReservationActivity"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.Funniflier2.NoActionBar">
+            android:theme="@style/Theme.Funniflier2">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,16 +31,13 @@
         </activity>
         <activity
             android:name=".RegisterActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".LoginActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".HomeActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
     </application>
 
 </manifest>

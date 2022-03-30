@@ -6,16 +6,15 @@
     android:layout_height="match_parent"
     tools:context=".Login_Activity">
 
-
-
-
     <EditText
         android:id="@+id/user_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="email@domain.com"
         android:inputType="textEmailAddress"
-        tools:ignore="Autofill,HardcodedText,MissingConstraints" />
+        tools:ignore="Autofill,HardcodedText,MissingConstraints"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="90dp" />
 
     <EditText
         android:id="@+id/user_password"

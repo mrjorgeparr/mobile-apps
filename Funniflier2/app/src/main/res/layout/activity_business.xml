@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BusinessActivity">
+
+    <LinearLayout
+        android:layout_width="410dp"
+        android:layout_height="728dp"
+        android:orientation="vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="4dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/business_name_title"
+                android:layout_width="247dp"
+                android:layout_height="68dp"
+                android:layout_marginStart="7dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:text="Peluquería Juanita"
+                android:textSize="24sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.291"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toBottomOf="@+id/business_rating" />
+
+            <ImageView
+                android:id="@+id/imageView"
+                android:layout_width="392dp"
+                android:layout_height="202dp"
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.47"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@color/purple_700"
+                tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="128dp"
+                android:layout_height="120dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView"
+                app:srcCompat="@android:mipmap/sym_def_app_icon"
+                tools:srcCompat="@tools:sample/avatars" />
+
+            <TextView
+                android:id="@+id/business_services"
+                android:layout_width="390dp"
+                android:layout_height="33dp"
+                android:text="Corte de pelo hombres y mujeres"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+
+            <TextView
+                android:id="@+id/business_activity_address"
+                android:layout_width="390dp"
+                android:layout_height="33dp"
+                android:text="Avenida de la universidad, 33"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/business_services"
+                app:layout_constraintTop_toBottomOf="@+id/business_services" />
+
+            <TextView
+                android:id="@+id/business_activity_schedule"
+                android:layout_width="390dp"
+                android:layout_height="33dp"
+                android:text="from 08:00 to 14:00"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="@+id/business_activity_address"
+                app:layout_constraintTop_toBottomOf="@+id/business_activity_address" />
+
+            <RatingBar
+                android:id="@+id/business_rating"
+                android:layout_width="247dp"
+                android:layout_height="41dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.869"
+                app:layout_constraintStart_toEndOf="@+id/imageView2"
+                app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="wrap_content"
+                android:layout_height="58dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="36dp"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <RadioButton
+                    android:id="@+id/business_rate1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1" />
+
+                <RadioButton
+                    android:id="@+id/business_rate2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:minHeight="48dp"
+                    android:text="2" />
+
+                <RadioButton
+                    android:id="@+id/business_rate3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="3" />
+
+                <RadioButton
+                    android:id="@+id/business_rate4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="4" />
+
+                <RadioButton
+                    android:id="@+id/business_rate5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5" />
+
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:layout_marginStart="6dp"
+                android:layout_marginBottom="36dp"
+                android:onClick="rate"
+                android:text="Ok"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.478"
+                app:layout_constraintStart_toEndOf="@+id/radioGroup" />
+
+            <TextView
+                android:id="@+id/rate_text"
+                android:layout_width="238dp"
+                android:layout_height="35dp"
+                android:layout_marginBottom="4dp"
+                android:text="Give a rate to this business:"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toTopOf="@+id/radioGroup"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <Button
+                android:id="@+id/business_reservation_button"
+                android:layout_width="163dp"
+                android:layout_height="62dp"
+                android:layout_marginTop="8dp"
+                android:onClick="reserve"
+                android:text="Reserve"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/business_activity_schedule" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
