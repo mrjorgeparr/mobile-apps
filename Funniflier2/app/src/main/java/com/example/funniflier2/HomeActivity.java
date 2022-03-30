@@ -15,8 +15,10 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.util.Log;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.PopupMenu;
 import android.widget.ScrollView;
 
 import com.example.funniflier2.ui.home.SectionsPagerAdapter;
@@ -41,15 +43,12 @@ public class HomeActivity extends AppCompatActivity{
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        //Toolbar
-
-
         SectionsPagerAdapter sectionsPagerAdapter = new SectionsPagerAdapter(this, getSupportFragmentManager());
         ViewPager viewPager = binding.viewPager;
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
-
+/*
         FloatingActionButton fab = binding.fab;
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,7 +56,7 @@ public class HomeActivity extends AppCompatActivity{
                 Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
-        });
+        });*/
     }
 
 
@@ -79,6 +78,16 @@ public class HomeActivity extends AppCompatActivity{
             return super.onOptionsItemSelected(item);
         }
     }
+
+    //Pop up menu from https://www.tutlane.com/tutorial/android/android-popup-menu-with-examples
+    public void showPopup(View v) {
+        PopupMenu popup = new PopupMenu(this, v);
+        MenuInflater inflater = popup.getMenuInflater();
+        inflater.inflate(R.menu.popup_home, popup.getMenu());
+        popup.show();
+    }
+
+
 }
 
 
