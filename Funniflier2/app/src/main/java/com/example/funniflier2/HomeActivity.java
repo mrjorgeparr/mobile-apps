@@ -20,6 +20,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.PopupMenu;
 import android.widget.ScrollView;
+import android.widget.Toast;
 
 import com.example.funniflier2.ui.home.SectionsPagerAdapter;
 import com.example.funniflier2.databinding.ActivityHomeBinding;
@@ -87,6 +88,9 @@ public class HomeActivity extends AppCompatActivity{
         popup.show();
     }
 
+    public void popUpMenuClickListener(MenuItem item) {
+        Toast.makeText(this, "not available yet", Toast.LENGTH_SHORT).show();
+    }
 
 }
 
