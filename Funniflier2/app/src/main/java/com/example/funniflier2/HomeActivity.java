@@ -89,6 +89,11 @@ public class HomeActivity extends AppCompatActivity{
     }
 
     public void popUpMenuClickListener(MenuItem item) {
+        if (item.getTitle() == "Business"){
+
+        }else if (item.getTitle() == "Reservation"){
+
+        }
         Toast.makeText(this, "not available yet", Toast.LENGTH_SHORT).show();
     }
 

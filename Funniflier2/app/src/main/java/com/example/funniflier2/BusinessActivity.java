@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import com.example.funniflier2.utils.ReservationDetails;
 
@@ -62,8 +63,9 @@ public class BusinessActivity extends AppCompatActivity {
                     }
                 }, mHour, mMinute, false);
         timePickerDialog.show();
-
         writeOnDB(reservation);
+
+        Toast.makeText(this, "Reservation Completed", Toast.LENGTH_LONG);
     }
 
     private void writeOnDB(ReservationDetails reservation) {
