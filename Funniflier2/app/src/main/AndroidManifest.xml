@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Funniflier2">
-
+        <activity
+            android:name=".SettingsActivity"
+            android:exported="false"
+            android:label="@string/title_activity_settings" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -29,7 +32,7 @@
             android:name=".MapsActivity"
             android:exported="false"
             android:label="@string/title_activity_maps"
-            android:theme="@style/Theme.Funniflier2"/>
+            android:theme="@style/Theme.Funniflier2" />
         <activity
             android:name=".ProfileActivity"
             android:exported="false" />

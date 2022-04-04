@@ -1,5 +1,6 @@
 package com.example.funniflier2;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 
@@ -95,6 +96,13 @@ public class HomeActivity extends AppCompatActivity{
 
         }
         Toast.makeText(this, "not available yet", Toast.LENGTH_SHORT).show();
+    }
+
+    public void goToSettings(MenuItem item){
+        Intent intent2 = new Intent(this, SettingsActivity.class);
+        Bundle bundle = new Bundle();
+        intent2.putExtras(bundle);
+        this.startActivity(intent2);
     }
 
 }
