@@ -11,6 +11,12 @@
     <string name="language">Language</string>
     <string name="search_header">Search</string>
     <string name="order_criteria">Order occurrences by</string>
+    <string name="profile_header">Profile</string>
+    <string name="name_title">Name</string>
+    <string name="surname_title">Surname</string>
+    <string name="email_title">Email</string>
+    <string name="address_title">Address</string>
+
 
     <!-- Menu home activity -->
     <string name="action_settings">Settings</string>

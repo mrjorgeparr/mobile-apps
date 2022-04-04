@@ -22,6 +22,8 @@
             app:entryValues="@array/order_values"
             app:defaultValue="distance"/>
 
+
+
         <!--
         <ListPreference
             app:defaultValue="reply"
@@ -42,6 +44,27 @@
             app:summaryOn="@string/attachment_summary_on"
             app:title="@string/attachment_title" />
         -->
+    </PreferenceCategory>
+
+    <PreferenceCategory app:title="@string/profile_header">
+        <EditTextPreference
+            app:key="name"
+            app:title="@string/name_title"
+            app:defaultValue="Change Name">
+        </EditTextPreference>
+
+        <EditTextPreference
+            app:key="surname"
+            app:title="@string/surname_title"
+            app:defaultValue="Change Surname">
+        </EditTextPreference>
+
+        <EditTextPreference
+            app:key="email"
+            app:title="@string/email_title"
+            app:defaultValue="Change Email">
+        </EditTextPreference>
+
     </PreferenceCategory>
 
 </PreferenceScreen>
