@@ -2,9 +2,11 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/reservationPopUpItem"
         android:onClick="popUpMenuClickListener"
         android:title="Reservation" />
     <item
+        android:id="@+id/businessPopUpItem"
         android:onClick="popUpMenuClickListener"
         android:title="Business" />
 </menu>

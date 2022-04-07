@@ -90,12 +90,15 @@ public class HomeActivity extends AppCompatActivity{
     }
 
     public void popUpMenuClickListener(MenuItem item) {
-        if (item.getTitle() == "Business"){
-
+        if (item.getItemId() == R.id.businessPopUpItem){
+            Intent intent2 = new Intent(this, ScannerActivity.class);
+            Bundle bundle = new Bundle();
+            intent2.putExtras(bundle);
+            this.startActivity(intent2);
         }else if (item.getTitle() == "Reservation"){
-
+            Toast.makeText(this, "not available yet", Toast.LENGTH_SHORT).show();
         }
-        Toast.makeText(this, "not available yet", Toast.LENGTH_SHORT).show();
+
     }
 
     public void goToSettings(MenuItem item){
@@ -104,6 +107,7 @@ public class HomeActivity extends AppCompatActivity{
         intent2.putExtras(bundle);
         this.startActivity(intent2);
     }
+
 
 }
 
