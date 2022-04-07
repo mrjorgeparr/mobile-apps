@@ -107,10 +107,4 @@ public class HomeActivity extends AppCompatActivity{
         intent2.putExtras(bundle);
         this.startActivity(intent2);
     }
-
-
 }
-
-
-
-

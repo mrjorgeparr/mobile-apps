@@ -37,8 +37,18 @@ public class ScannerActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_scanner);
     }
-    public void scanBarcode(View view) {
+
+    public void scanBarcodeLol(View view) {
         barcodeLauncher.launch(new ScanOptions());
     }
 
+    public void scanBarcode(View view) {
+        ScanOptions options = new ScanOptions();
+        options.setCaptureActivity(AnyOrientationCaptureActivity.class);
+        options.setDesiredBarcodeFormats(ScanOptions.ONE_D_CODE_TYPES);
+        options.setPrompt("Scan something");
+        options.setOrientationLocked(false);
+        options.setBeepEnabled(false);
+        barcodeLauncher.launch(options);
+    }
 }
