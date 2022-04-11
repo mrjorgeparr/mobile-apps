@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.funniflier2">
 
     <application
@@ -8,7 +9,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Funniflier2">
+        android:theme="@style/Theme.Funniflier2"
+        tools:ignore="ExtraText">
         <activity
             android:name=".ScannerActivity"
             android:exported="false" />
@@ -32,9 +34,10 @@
              project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
              "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
         -->
+        YOUR_API_KEY=AIzaSyC-9Ri7IremfI_n_2W_pYx7W-M5gq3COQY
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="${MAPS_API_KEY}" />
+            android:value="YOUR_API_KEY" />
 
         <activity
             android:name=".MapsActivity"
@@ -70,6 +73,16 @@
         <activity
             android:name=".HomeActivity"
             android:exported="false" />
+        <activity
+            android:name=".HomeBusinessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterBusinessActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegisterCustomerActivity"
+            android:exported="false" />
+
     </application>
 
 </manifest>
