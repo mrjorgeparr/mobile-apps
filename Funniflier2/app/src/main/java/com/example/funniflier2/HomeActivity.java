@@ -36,10 +36,9 @@ public class HomeActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
 
         //Toast.makeText(this, toolbar.toString(), Toast.LENGTH_LONG).show();
-
         //db = new DataBase();
         //log = db.createTable();
-        log="hola";
+
         //Toast.makeText(this, log, Toast.LENGTH_LONG).show();
 
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
@@ -50,15 +49,6 @@ public class HomeActivity extends AppCompatActivity{
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
-/*
-        FloatingActionButton fab = binding.fab;
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
     }
 
 
