@@ -30,7 +30,7 @@ jobs:
         distribution: 'temurin'
 
     - name: Add fake api key to a local.properties file
-      run: echo "apiKey=\"\"" >> Funniflier/local.properties
+      run: echo "apiKey=\"\"" >> Funniflier2/local.properties
       
     - name: Build with Gradle
       uses: gradle/gradle-build-action@0d13054264b0bb894ded474f08ebb30921341cee
