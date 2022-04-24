@@ -15,6 +15,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.SearchView;
 
 import com.example.funniflier2.ui.search.SectionsPagerAdapter;
 import com.example.funniflier2.databinding.ActivitySearchBinding;
@@ -47,7 +48,22 @@ public class SearchActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.home, menu);
+        getMenuInflater().inflate(R.menu.search, menu);
+
+        MenuItem menuItem = menu.findItem(R.id.search_action);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                goToSearch(menuItem);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                return false;
+            }
+        });
         return true;
     }
 
@@ -62,6 +78,13 @@ public class SearchActivity extends AppCompatActivity {
         } else {
             return super.onOptionsItemSelected(item);
         }
+    }
+
+    public void goToSettings(MenuItem item){
+        Intent intent2 = new Intent(this, SettingsActivity.class);
+        Bundle bundle = new Bundle();
+        intent2.putExtras(bundle);
+        this.startActivity(intent2);
     }
 
     public void goToSearch(MenuItem item){
