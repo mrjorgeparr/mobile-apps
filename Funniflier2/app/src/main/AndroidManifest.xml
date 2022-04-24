@@ -12,6 +12,19 @@
         android:theme="@style/Theme.Funniflier2"
         tools:ignore="ExtraText">
         <activity
+            android:name=".SearchActivity"
+            android:exported="false"
+            android:label="@string/title_activity_search"
+            android:theme="@style/Theme.Funniflier2">
+
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                android:resource="@xml/searchable"/>
+        </activity>
+
+        <activity
             android:name=".ScannerActivity"
             android:exported="false" />
         <activity
@@ -34,7 +47,6 @@
              project's local.properties file (e.g. MAPS_API_KEY=Aiza...), and replace the
              "YOUR_API_KEY" string in this file with "${MAPS_API_KEY}".
         -->
-        YOUR_API_KEY=AIzaSyC-9Ri7IremfI_n_2W_pYx7W-M5gq3COQY
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="YOUR_API_KEY" />
@@ -82,7 +94,6 @@
         <activity
             android:name=".RegisterCustomerActivity"
             android:exported="false" />
-
     </application>
 
 </manifest>

@@ -9,6 +9,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
+import android.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
@@ -55,13 +56,17 @@ public class HomeActivity extends AppCompatActivity{
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.home, menu);
+
+        MenuItem menuItem = menu.findItem(R.id.search_action);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+        searchView.setQueryHint("Search");
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_search) {
-            Log.d(this.getLocalClassName(), "TODO: Implement search");
+            goToSearch(item);
             return true;
         } else if (item.getItemId() == R.id.action_settings) {
             Log.d(this.getLocalClassName(), "TODO: Implement settings");
@@ -93,6 +98,13 @@ public class HomeActivity extends AppCompatActivity{
 
     public void goToSettings(MenuItem item){
         Intent intent2 = new Intent(this, SettingsActivity.class);
+        Bundle bundle = new Bundle();
+        intent2.putExtras(bundle);
+        this.startActivity(intent2);
+    }
+
+    public void goToSearch(MenuItem item){
+        Intent intent2 = new Intent(this, SearchActivity.class);
         Bundle bundle = new Bundle();
         intent2.putExtras(bundle);
         this.startActivity(intent2);
