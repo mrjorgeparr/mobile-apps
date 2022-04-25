@@ -19,6 +19,8 @@ output.json
 *.iml
 .idea/
 misc.xml
+
+.run/
 deploymentTargetDropDown.xml
 render.experimental.xml
 
@@ -31,3 +33,5 @@ google-services.json
 
 # Android Profiling
 *.hprof
+
+.editorconfig
