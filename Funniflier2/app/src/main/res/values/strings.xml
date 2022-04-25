@@ -30,4 +30,9 @@
     <string name="button_no">No</string>
     <string name="cancelled_text">Reservation successfully canceled</string>
     <string name="title_activity_maps">MapsActivity</string>
+    <string name="title_activity_search">SearchActivity</string>
+
+    <!-- Search -->
+    <string name="search_nearest">Nearests</string>
+    <string name="search_best">Bests</string>
 </resources>
