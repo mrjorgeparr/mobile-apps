@@ -85,7 +85,7 @@ public class HomeBusinessActivity extends AppCompatActivity{
     public void showPopup(View v) {
         PopupMenu popup = new PopupMenu(this, v);
         MenuInflater inflater = popup.getMenuInflater();
-        inflater.inflate(R.menu.popup_home, popup.getMenu());
+        inflater.inflate(R.menu.popup_business, popup.getMenu());
         popup.show();
     }
 
