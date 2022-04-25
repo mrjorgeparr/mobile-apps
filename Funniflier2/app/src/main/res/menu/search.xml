@@ -9,14 +9,8 @@
         app:actionViewClass="android.widget.SearchView"
         app:showAsAction="always" />
     <item
-        android:id="@+id/action_settings"
-        android:icon="@drawable/ic_launcher_background"
-        android:onClick="goToSettings"
-        android:title="@string/action_settings"
-        app:showAsAction="never" />
-
-    <item
         android:id="@+id/action_about"
         android:title="@string/action_about"
         app:showAsAction="never" />
+
 </menu>
