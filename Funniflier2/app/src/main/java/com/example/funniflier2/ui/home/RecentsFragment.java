@@ -18,8 +18,8 @@ import com.example.funniflier2.utils.HomeUtils;
 
 /**
  * A placeholder fragment containing a simple view.
- */
-public class RecentsFragment extends Fragment {
+ */public class RecentsFragment extends Fragment {
+
 
     //private static final String ARG_SECTION_NUMBER = "section_number";
     private PageViewModel pageViewModel;
