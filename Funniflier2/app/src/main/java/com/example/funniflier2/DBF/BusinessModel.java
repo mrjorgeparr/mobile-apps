@@ -8,9 +8,10 @@ public class BusinessModel {
     private String longitude;
     private String schedule;
     private double ratings;
+    private String password;
 
 
-    public BusinessModel(String id, String CIF, String address, String latitude, String longitude, String schedule, double ratings) {
+    public BusinessModel(String id, String CIF, String address, String latitude, String longitude, String schedule, double ratings, String password) {
         this.id = id;
         this.CIF = CIF;
         this.address = address;
@@ -18,19 +19,7 @@ public class BusinessModel {
         this.longitude = longitude;
         this.schedule = schedule;
         this.ratings = ratings;
-    }
-
-    @Override
-    public String toString() {
-        return "BusinessModel{" +
-                "id='" + id + '\'' +
-                ", CIF='" + CIF + '\'' +
-                ", address='" + address + '\'' +
-                ", latitude='" + latitude + '\'' +
-                ", longitude='" + longitude + '\'' +
-                ", schedule='" + schedule + '\'' +
-                ", ratings=" + ratings +
-                '}';
+        this.password = password;
     }
 
     public String getId() {
@@ -87,5 +76,13 @@ public class BusinessModel {
 
     public void setRatings(double ratings) {
         this.ratings = ratings;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

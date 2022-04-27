@@ -1,6 +1,7 @@
 package com.example.funniflier2;
 
 
+
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -18,8 +19,11 @@ public class RegisterBusinessActivity extends AppCompatActivity implements View.
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_business);
-        Button ok_button = (Button) findViewById(R.id.ok_button);
-        ok_button.setOnClickListener(this);
+        ok_button = findViewById(R.id.ok_button);
+        et_
+        //Button ok_button = (Button) findViewById(R.id.ok_button);
+        //ok_button.setOnClickListener(this);
+
     }
 
     @Override
