@@ -12,7 +12,7 @@ This would be a simple first approach that covers all the things that we need to
 
 User(id_p, name, surname1, surname2, email)
 
-Business(id_p, CIF, type, address, latitude, schedule, longitude, keywords)
+Business(id_p, CIF, type, address, latitude, schedule, longitude, ratings)
 
 Restaurant(business_id*{related to business UC|DC}, capability, menu)
 

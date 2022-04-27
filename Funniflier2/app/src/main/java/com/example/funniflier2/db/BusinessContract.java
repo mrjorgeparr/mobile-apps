@@ -21,8 +21,7 @@ public class BusinessContract {
             private static final String ADDRESS = "address";
             private static final String APP_TIME = "app_time";
             /* storing a vector like that may be a source error, */
-            //private static final Vector KEYWORDS = "keywords";
-            private static final String KEYWORDS = "keywords";
+
         }
 
 

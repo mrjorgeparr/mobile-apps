@@ -1,6 +1,6 @@
 package com.example.funniflier2.db;
 
-import java.util.Vector;
+
 
 
 public class Business {
@@ -14,10 +14,9 @@ public class Business {
     private double latitude;
     private double longitude;
     private String schedule;
-    private Vector keywords;
-
+    private double rating;
     public Business(String id, String CIF, String name, int type, String address,
-                    String ap_time, double latitude, double longitude, String schedule, Vector keywords){
+                    String ap_time, double latitude, double longitude, String schedule){
         this.id = id;
         this.CIF = CIF;
         this.name = name;
@@ -26,7 +25,6 @@ public class Business {
         this.app_time = app_time;
         this.latitude = latitude;
         this.schedule = schedule;
-        this.keywords = new Vector<String>();
     }
 
 
@@ -68,10 +66,6 @@ public class Business {
         return longitude;
     }
 
-    public Vector getKeywords() {
-        return keywords;
-    }
-
     public void setId(String id) {
         this.id = id;
     }
@@ -94,10 +88,6 @@ public class Business {
 
     public void setLongitude(double longitude) {
         this.longitude = longitude;
-    }
-
-    public void setKeywords(Vector keywords) {
-        this.keywords = keywords;
     }
 
     public void setSchedule(String schedule) {

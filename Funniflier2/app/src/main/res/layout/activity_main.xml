@@ -8,24 +8,24 @@
 
     <Button
         android:id="@+id/button1"
-        android:layout_width="184dp"
-        android:layout_height="116dp"
-        android:layout_marginStart="120dp"
+        android:layout_width="157dp"
+        android:layout_height="89dp"
         android:onClick="onClick"
         android:text="Register"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteY="119dp" />
+        tools:layout_editor_absoluteY="100dp" />
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="177dp"
-        android:layout_height="105dp"
-        android:layout_marginStart="120dp"
-        android:layout_marginBottom="257dp"
+        android:layout_width="178dp"
+        android:layout_height="85dp"
+        android:layout_marginBottom="320dp"
         android:onClick="onClick"
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="DuplicateIds,HardcodedText,MissingConstraints" />
 

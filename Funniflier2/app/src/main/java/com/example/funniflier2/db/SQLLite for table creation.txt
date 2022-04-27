@@ -27,7 +27,7 @@ CREATE TABLE Business(
    latitude REAL NOT NULL,
    longitude REAL NOT NULL,
    schedule TEXT NOT NULL,
-   KEYWORDS TEXT
+   ratings REAL
 )
 
 /*the CASCADE update or delete may be a source of errors, check when actually implementing them*/
