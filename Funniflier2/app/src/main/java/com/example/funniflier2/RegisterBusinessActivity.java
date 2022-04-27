@@ -34,7 +34,7 @@ public class RegisterBusinessActivity extends AppCompatActivity implements View.
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
     }
-
+/*
     @Override
     ok_button.setOnClickListener(new View.OnClickListener()){
         // the following method should insert a business instance into the db, one row in businesses and one
@@ -56,4 +56,6 @@ public class RegisterBusinessActivity extends AppCompatActivity implements View.
             }
         }
     }
+
+ */
 }
