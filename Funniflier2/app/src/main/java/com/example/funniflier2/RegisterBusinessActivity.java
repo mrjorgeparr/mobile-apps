@@ -20,7 +20,7 @@ public class RegisterBusinessActivity extends AppCompatActivity implements View.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_business);
         ok_button = findViewById(R.id.ok_button);
-        et_
+
         //Button ok_button = (Button) findViewById(R.id.ok_button);
         //ok_button.setOnClickListener(this);
 
@@ -48,7 +48,7 @@ public class RegisterBusinessActivity extends AppCompatActivity implements View.
             // right now id is set to 1, must set it to the number of record considered later on
             // THIS WILL PROBABLY NEED TO BE IMPORTED IN SOME MANNER FROM DBF, ask Chris
             // we need some way to identify if the business being input is a restaurant or a hairdresser, in which case the forms must change
-            BusinessModel bmodel = new BusinessModel(1, et_CIF.getText().toString(), et_address.getText().toString(),et_latitude.getText().toString(), et_longitude.getText().toString(),et_schedule.getText().toString(), et_rating);
+            BusinessModel bmodel = new BusinessModel(1, n_CIF.getText().toString(), n_address.getText().toString(),n_latitude.getText().toString(), n_longitude.getText().toString(),n_schedule.getText().toString(), n_rating);
 
             if (et_businesstype.equals("restaurant")){
                 // then we input extra info of the restaurant
