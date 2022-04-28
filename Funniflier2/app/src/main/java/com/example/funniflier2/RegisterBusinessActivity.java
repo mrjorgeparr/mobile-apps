@@ -6,7 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-
+import android.widget.RadioButton;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -37,6 +37,21 @@ public class RegisterBusinessActivity extends AppCompatActivity implements View.
     @Override
     public void onPointerCaptureChanged(boolean hasCapture) {
         super.onPointerCaptureChanged(hasCapture);
+    }
+
+    public void onRadioButtonClicked(View view) {
+        boolean checked = ((RadioButton) view).isChecked();
+        switch(view.getId()) {
+            case R.id.radio1:
+                if (checked)
+                    // Restaurant
+                    break;
+            case R.id.radio2:
+                if (checked)
+                    // Hairdresser
+                    break;
+    }
+
     }
 /*
     @Override
