@@ -10,7 +10,6 @@ public class BusinessModel {
     private double ratings;
     private String password;
 
-
     public BusinessModel(String id, String CIF, String address, String latitude, String longitude, String schedule, double ratings, String password) {
         this.id = id;
         this.CIF = CIF;
@@ -84,5 +83,19 @@ public class BusinessModel {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "BusinessModel{" +
+                "id='" + id + '\'' +
+                ", CIF='" + CIF + '\'' +
+                ", address='" + address + '\'' +
+                ", latitude='" + latitude + '\'' +
+                ", longitude='" + longitude + '\'' +
+                ", schedule='" + schedule + '\'' +
+                ", ratings=" + ratings +
+                ", password='" + password + '\'' +
+                '}';
     }
 }

@@ -30,8 +30,8 @@ public class Business {
     @ColumnInfo(name="latitude")
     private float latitude;
 
-    @ColumnInfo(name="keywords")
-    private String keywords;
+    @ColumnInfo(name="rating")
+    private float rating;
 
     @ColumnInfo(name="schedule")
     private String schedule;
@@ -47,7 +47,7 @@ public class Business {
                     int type,
                     float longitude,
                     float latitude,
-                    String keywords,
+                    float rating,
                     String schedule,
                     String attributes) {
         this.id = id;
@@ -58,35 +58,96 @@ public class Business {
         this.type = type;
         this.longitude = longitude;
         this.latitude = latitude;
-        this.keywords = keywords;
+        this.rating = rating;
         this.schedule = schedule;
         this.attributes = attributes;
     }
 
-    //Getters
-    public long getId() { return id; }
-    public String getName() { return name; }
-    public String getCif() { return cif; }
-    public int getType() { return type; }
-    public float getLongitude() { return longitude; }
-    public float getLatitude() { return latitude; }
-    public String getKeywords() { return keywords; }
-    public String getSchedule() { return schedule; }
-    public String getEmail() { return email; }
-    public String getPassword () { return password; }
-    public String getAttributes() { return attributes;}
+    public long getId() {
+        return id;
+    }
 
+    public void setId(long id) {
+        this.id = id;
+    }
 
-    //Setters
-    public void setId(long id) { this.id = id; }
-    public void setName(String name) { this.name = name; }
-    public void setCif(String cif) { this.cif = cif; }
-    public void setType(int type) { this.type = type; }
-    public void setLongitude(float longitude) { this.longitude = longitude; }
-    public void setLatitude(float latitude) { this.latitude = latitude; }
-    public void setKeywords(String keywords) { this.keywords = keywords; }
-    public void setSchedule(String schedule) { this.schedule = schedule; }
-    public void setEmail(String password) { this.email = email; }
-    public void setPassword (String password) { this.password = password; }
-    public void setAttributes(String attributes) { this.attributes = attributes;}
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getCif() {
+        return cif;
+    }
+
+    public void setCif(String cif) {
+        this.cif = cif;
+    }
+
+    public int getType() {
+        return type;
+    }
+
+    public void setType(int type) {
+        this.type = type;
+    }
+
+    public float getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(float longitude) {
+        this.longitude = longitude;
+    }
+
+    public float getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(float latitude) {
+        this.latitude = latitude;
+    }
+
+    public float getRating() {
+        return rating;
+    }
+
+    public void setRating(float rating) {
+        this.rating = rating;
+    }
+
+    public String getSchedule() {
+        return schedule;
+    }
+
+    public void setSchedule(String schedule) {
+        this.schedule = schedule;
+    }
+
+    public String getAttributes() {
+        return attributes;
+    }
+
+    public void setAttributes(String attributes) {
+        this.attributes = attributes;
+    }
 }
