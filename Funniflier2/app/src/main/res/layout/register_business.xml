@@ -4,24 +4,27 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register_Business">
+    tools:context=".RegisterBusinessActivity">
+
 
     <EditText
-        android:id="@+id/business_name"
+        android:id="@+id/business_cif"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Name"
+        android:hint="CIF"
 
-        tools:ignore="Autofill,HardcodedText,MissingConstraints,TextFields" />
+        tools:ignore="Autofill,HardcodedText,MissingConstraints,TextFields"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="-5dp" />
 
     <EditText
         android:id="@+id/business_address"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
 
+        android:layout_marginTop="44dp"
         android:hint="Address"
-        app:layout_constraintTop_toBottomOf="@+id/business_name"
+        app:layout_constraintTop_toBottomOf="@+id/business_cif"
         tools:ignore="Autofill,HardcodedText,MissingConstraints,TextFields"
         tools:layout_editor_absoluteX="0dp" />
 
@@ -29,32 +32,41 @@
         android:id="@+id/user_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="148dp"
+        android:layout_marginTop="59dp"
         android:hint="email@domain.com"
         android:inputType="textEmailAddress"
-        app:layout_constraintTop_toBottomOf="@+id/business_name"
+        app:layout_constraintTop_toBottomOf="@+id/business_activity_schedule"
         tools:ignore="Autofill,HardcodedText,MissingConstraints"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <EditText
+        android:id="@+id/business_activity_schedule"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+
+        android:hint="Schedule"
+        app:layout_constraintTop_toBottomOf="@+id/business_address"
+        tools:ignore="Autofill,HardcodedText,MissingConstraints,TextFields"
         tools:layout_editor_absoluteX="0dp" />
 
     <EditText
         android:id="@+id/user_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="77dp"
+        android:layout_marginTop="58dp"
         android:hint="password"
         android:inputType="textPassword"
         app:layout_constraintTop_toBottomOf="@+id/user_email"
         tools:ignore="Autofill,HardcodedText,MissingConstraints"
         tools:layout_editor_absoluteX="0dp" />
 
-
-
     <Button
         android:id="@+id/ok_button"
         android:layout_width="184dp"
         android:layout_height="116dp"
         android:layout_marginStart="112dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="64dp"
 
         android:text="OK"
         app:layout_constraintStart_toStartOf="parent"
