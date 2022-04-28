@@ -19,7 +19,7 @@ public interface BusinessDao {
     @Query("SELECT * FROM Business WHERE cif=:cif")
     Business findByCif(String cif);
 
-    @Query("SELECT * FROM Business WHERE email=:email")
+    @Query("SELECT DISTINCT * FROM Business WHERE email=:email")
     User findByEmail(String email);
 
     @Insert

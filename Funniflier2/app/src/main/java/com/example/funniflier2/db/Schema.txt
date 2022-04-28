@@ -21,6 +21,8 @@ Hairdressers(business_id*{related to business UC|DC}, nbarbers)
 User_favourites(id_p, business_id*{related to business}, user_id*{related to user})
 
 
+Reservations(b_id, u_id, time, duration)
+
 
 
 Things to do:
