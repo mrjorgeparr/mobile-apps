@@ -12,14 +12,13 @@ This would be a simple first approach that covers all the things that we need to
 
 User(id_p, name, surname1, surname2, email)
 
-Business(id_p, CIF, type, address, latitude, schedule, longitude, ratings)
+Business(id_p, CIF, type, address, latitude, schedule, longitude, ratings, capacity)
 
-Restaurant(business_id*{related to business UC|DC}, capability, menu)
+Restaurant(business_id*{related to business UC|DC}, capability, type)
 
 Hairdressers(business_id*{related to business UC|DC}, nbarbers)
 
 User_favourites(id_p, business_id*{related to business}, user_id*{related to user})
-
 
 Reservations(b_id, u_id, time, duration)
 
