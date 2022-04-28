@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register_Customer">
+    tools:context=".RegisterCustomerActivity">
 
     <EditText
         android:id="@+id/user_name"
@@ -14,36 +14,58 @@
 
         tools:ignore="Autofill,HardcodedText,MissingConstraints,TextFields" />
 
+
+    <EditText
+        android:id="@+id/user_surname1"
+        android:layout_width="422dp"
+        android:layout_height="89dp"
+        android:layout_marginTop="8dp"
+
+        android:hint="Surname1"
+        app:layout_constraintTop_toBottomOf="@+id/user_name"
+        tools:ignore="Autofill,HardcodedText,MissingConstraints,TextFields"
+        tools:layout_editor_absoluteX="0dp" />
+
+    <EditText
+        android:id="@+id/user_surname2"
+        android:layout_width="422dp"
+        android:layout_height="89dp"
+
+        android:layout_marginTop="12dp"
+        android:hint="Surname2"
+        app:layout_constraintTop_toBottomOf="@+id/user_surname1"
+        tools:ignore="Autofill,HardcodedText,MissingConstraints,TextFields"
+        tools:layout_editor_absoluteX="0dp" />
+
     <EditText
         android:id="@+id/user_email"
         android:layout_width="409dp"
         android:layout_height="97dp"
-        android:layout_marginTop="47dp"
+        android:layout_marginTop="8dp"
         android:hint="email@domain.com"
         android:inputType="textEmailAddress"
-        app:layout_constraintTop_toBottomOf="@+id/user_name"
+        app:layout_constraintTop_toBottomOf="@+id/user_surname2"
         tools:ignore="Autofill,HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteX="3dp" />
+        tools:layout_editor_absoluteX="0dp" />
 
     <EditText
         android:id="@+id/user_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="77dp"
+        android:layout_marginTop="12dp"
         android:hint="password"
         android:inputType="textPassword"
         android:minHeight="48dp"
         app:layout_constraintTop_toBottomOf="@+id/user_email"
         tools:ignore="Autofill,HardcodedText,MissingConstraints"
-        tools:layout_editor_absoluteX="0dp" />
-
+        tools:layout_editor_absoluteX="-2dp" />
 
     <Button
         android:id="@+id/ok_button"
         android:layout_width="174dp"
         android:layout_height="75dp"
-        android:layout_marginStart="112dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginStart="116dp"
+        android:layout_marginTop="44dp"
 
         android:text="OK"
         app:layout_constraintStart_toStartOf="parent"
