@@ -9,6 +9,7 @@ public class BusinessModel {
     private String schedule;
     private double ratings;
     private String password;
+    private int capability;
 
     public BusinessModel(String id, String CIF, String address, String latitude, String longitude, String schedule, double ratings, String password) {
         this.id = id;
@@ -19,6 +20,7 @@ public class BusinessModel {
         this.schedule = schedule;
         this.ratings = ratings;
         this.password = password;
+        this.capability = capability;
     }
 
     public String getId() {

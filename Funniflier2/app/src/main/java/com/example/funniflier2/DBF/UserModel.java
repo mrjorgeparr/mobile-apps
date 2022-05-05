@@ -6,6 +6,7 @@ public class UserModel {
     private String surname1;
     private String surname2;
     private String email;
+    private String password;
 
     //constructors
 
@@ -15,6 +16,7 @@ public class UserModel {
         this.surname1 = surname1;
         this.surname2 = surname2;
         this.email = email;
+        this.password = password;
     }
     // toString method is necessary for printing the contents of the class object
 
@@ -26,6 +28,7 @@ public class UserModel {
                 ", surname1='" + surname1 + '\'' +
                 ", surname2='" + surname2 + '\'' +
                 ", email='" + email + '\'' +
+                ", password='" + password + '\'' +
                 '}';
     }
 
