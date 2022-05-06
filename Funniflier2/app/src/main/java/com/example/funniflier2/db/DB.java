@@ -1,4 +1,4 @@
-package com.example.funniflier2.db2;
+package com.example.funniflier2.db;
 
 import android.content.Context;
 
@@ -6,16 +6,17 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {User.class, Business.class}, version = 7)
+@Database(entities = {User.class, Business.class, Reservation.class}, version = 7)
 public abstract class DB extends RoomDatabase {
 
     private static final boolean preloadDB = false;
     private static final String PRELOADED_DATABASE_FILE = "testing1";
     private static final String DB_NAME = "funniflier";
     private static volatile DB instance;
-
     public abstract UserDao userDao();
     public abstract BusinessDao businessDao();
+    public abstract ReservationDao reservationDao();
+
 
     public static synchronized DB getInstance(Context context) {
         if (instance == null) {
@@ -36,5 +37,4 @@ public abstract class DB extends RoomDatabase {
                 .allowMainThreadQueries()
                 .build();
     }
-
 }

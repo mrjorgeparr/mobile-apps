@@ -11,6 +11,7 @@ import com.google.android.material.tabs.TabLayout;
 
 import android.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.room.Room;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -27,6 +28,7 @@ import android.widget.Toast;
 import com.example.funniflier2.ui.home.SectionsPagerAdapter;
 import com.example.funniflier2.databinding.ActivityHomeBinding;
 
+import com.example.funniflier2.db.DB;
 
 public class HomeActivity extends AppCompatActivity{
     private ActivityHomeBinding binding;
@@ -36,7 +38,7 @@ public class HomeActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //Toast.makeText(this, toolbar.toString(), Toast.LENGTH_LONG).show();
+        //AppDatabase db = Room.databaseBuilder()
         //db = new DataBase();
         //log = db.createTable();
 
@@ -62,7 +64,6 @@ public class HomeActivity extends AppCompatActivity{
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {
-
                 goToSearch(menuItem);
                 return true;
             }

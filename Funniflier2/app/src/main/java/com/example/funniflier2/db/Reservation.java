@@ -1,10 +1,11 @@
-package com.example.funniflier2.db2;
+package com.example.funniflier2.db;
 
 
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
+
 
 @Entity(foreignKeys = {
         @ForeignKey(entity = Business.class,
@@ -16,6 +17,7 @@ import androidx.room.PrimaryKey;
                 childColumns = "business_id",
                 onDelete = ForeignKey.CASCADE)
 })
+
 public class Reservation {
 
     @PrimaryKey

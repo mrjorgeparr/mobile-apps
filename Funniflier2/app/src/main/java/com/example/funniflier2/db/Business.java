@@ -1,100 +1,100 @@
 package com.example.funniflier2.db;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
 
-
-
+@Entity
 public class Business {
-    private String id;
-    private String CIF;
+    @PrimaryKey(autoGenerate = true)
+    private long id;
+
+    @ColumnInfo(name="name")
     private String name;
-    //if type==1 -> Restaurant, if type==2 -> Hairdresser
+
+    @ColumnInfo(name="email")
+    private String email;
+
+    @ColumnInfo(name="password")
+    private String password;
+
+    @ColumnInfo(name="cif")
+    private String cif;
+
+    @ColumnInfo(name="type")
     private int type;
-    private String address;
-    private String app_time;
-    private double latitude;
-    private double longitude;
+
+    @ColumnInfo(name="longitude")
+    private float longitude;
+
+    @ColumnInfo(name="latitude")
+    private float latitude;
+
+    @ColumnInfo(name="keywords")
+    private String keywords;
+
+    @ColumnInfo(name="schedule")
     private String schedule;
-    private double rating;
-    public Business(String id, String CIF, String name, int type, String address,
-                    String ap_time, double latitude, double longitude, String schedule){
+
+    @ColumnInfo(name="attributes")
+    private String attributes;
+
+    @ColumnInfo(name="rating")
+    private float rating;
+
+    public Business(long id,
+                    String name,
+                    String email,
+                    String password,
+                    String cif,
+                    int type,
+                    float longitude,
+                    float latitude,
+                    String keywords,
+                    String schedule,
+                    String attributes,
+                    float rating) {
+
         this.id = id;
-        this.CIF = CIF;
         this.name = name;
+        this.email = email;
+        this.password = password;
+        this.cif = cif;
         this.type = type;
-        this.address = address;
-        this.app_time = app_time;
-        this.latitude = latitude;
-        this.schedule = schedule;
-    }
-
-
-    // getter methods
-    public String getId(){
-        return id;
-    }
-
-    public String getCIF(){
-        return CIF;
-    }
-
-
-    /*public int getType(){
-        type==1 ? return "Restaurant":return "Hairdresser"
-    }
-    */
-    public String getType(){
-        if (type==1){return "Restaurant";}
-        return "Hairdresser";
-    }
-    public String getApp_time(){return app_time;}
-
-    public String getName(){ return name;}
-
-    public String getAddress(){
-        return address;
-    }
-
-    public String getSchedule() {
-        return schedule;
-    }
-
-    public double getLatitude() {
-        return latitude;
-    }
-
-    public double getLongitude() {
-        return longitude;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public void setCIF(String CIF) {
-        this.CIF = CIF;
-    }
-
-    public void setName(String name){ this.name = name;}
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public void setApp_time(String app_time){this.app_time = app_time;}
-
-    public void setLatitude(double latitude) {
-        this.latitude = latitude;
-    }
-
-    public void setLongitude(double longitude) {
         this.longitude = longitude;
-    }
-
-    public void setSchedule(String schedule) {
+        this.latitude = latitude;
+        this.keywords = keywords;
         this.schedule = schedule;
+        this.attributes = attributes;
+        this.rating = rating;
     }
 
-    public void setType(int type) {
-        this.type = type;
-    }
+    //Getters
+    public long getId() { return id; }
+    public String getName() { return name; }
+    public String getCif() { return cif; }
+    public int getType() { return type; }
+    public float getLongitude() { return longitude; }
+    public float getLatitude() { return latitude; }
+    public String getKeywords() { return keywords; }
+    public String getSchedule() { return schedule; }
+    public String getEmail() { return email; }
+    public String getPassword () { return password; }
+    public String getAttributes() { return attributes;}
+    public float getRating(){ return rating;}
+
+
+    //Setters
+    public void setId(long id) { this.id = id; }
+    public void setName(String name) { this.name = name; }
+    public void setCif(String cif) { this.cif = cif; }
+    public void setType(int type) { this.type = type; }
+    public void setLongitude(float longitude) { this.longitude = longitude; }
+    public void setLatitude(float latitude) { this.latitude = latitude; }
+    public void setKeywords(String keywords) { this.keywords = keywords; }
+    public void setSchedule(String schedule) { this.schedule = schedule; }
+    public void setEmail(String password) { this.email = email; }
+    public void setPassword (String password) { this.password = password; }
+    public void setAttributes(String attributes) { this.attributes = attributes;}
+    public void setRating(float rating){this.rating = rating;}
 }

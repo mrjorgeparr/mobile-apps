@@ -1,4 +1,4 @@
-package com.example.funniflier2.db2;
+package com.example.funniflier2.db;
 
 import androidx.room.Dao;
 import androidx.room.Delete;
@@ -11,10 +11,13 @@ import java.util.List;
 @Dao
 public interface BusinessDao {
     @Query("SELECT * FROM Business")
-    List<Business> getAllBusinesses();
+    List <Business> getAllBusinesses();
 
-    @Query("SELECT * FROM Business WHERE id=:id")
-    Business findById(int id);
+    @Query("SELECT * FROM Business WHERE id=:id ORDER BY rating")
+    Business findById(long id);
+
+    @Query("SELECT * FROM Business WHERE name=:name ORDER BY rating")
+    Business findbyName(String name);
 
     @Query("SELECT * FROM Business WHERE cif=:cif")
     Business findByCif(String cif);
@@ -32,5 +35,5 @@ public interface BusinessDao {
     void update(Business ... Business);
 
     @Delete
-    void  delete(Business Business);
+    void delete(Business Business);
 }
