@@ -8,7 +8,7 @@ import androidx.room.Query;
 import androidx.room.Update;
 
 import java.util.List;
-
+@Dao
 public interface User_favoritesDao {
     @Query("SELECT * FROM User_favorites")
     List<User_favorites> getAllReservations();
