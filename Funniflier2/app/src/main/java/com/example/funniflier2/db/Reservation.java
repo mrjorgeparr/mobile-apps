@@ -17,6 +17,7 @@ import androidx.room.PrimaryKey;
                 childColumns = "business_id",
                 onDelete = ForeignKey.CASCADE)
 })
+
 public class Reservation {
 
     @PrimaryKey
