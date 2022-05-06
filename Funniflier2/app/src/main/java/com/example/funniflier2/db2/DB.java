@@ -13,9 +13,10 @@ public abstract class DB extends RoomDatabase {
     private static final String PRELOADED_DATABASE_FILE = "testing1";
     private static final String DB_NAME = "funniflier";
     private static volatile DB instance;
-
     public abstract UserDao userDao();
     public abstract BusinessDao businessDao();
+    public abstract ReservationDao reservationDao();
+
 
     public static synchronized DB getInstance(Context context) {
         if (instance == null) {
@@ -36,5 +37,4 @@ public abstract class DB extends RoomDatabase {
                 .allowMainThreadQueries()
                 .build();
     }
-
 }
