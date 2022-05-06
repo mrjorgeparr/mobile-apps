@@ -11,8 +11,8 @@ public interface User_favoritesDao {
     @Query("SELECT * FROM User_favorites")
     List<Reservation> getAllReservations();
 
-    @Query("SELECT * FROM User_favorites WHERE id=:id")
-    Reservation findById(int id);
+    @Query("SELECT * FROM User_favorites WHERE u_id=:id")
+    Reservation findByUId(int id);
 
     @Insert
     long insert(User_favorites);
