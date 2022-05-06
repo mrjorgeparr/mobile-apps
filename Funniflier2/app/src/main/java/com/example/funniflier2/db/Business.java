@@ -30,14 +30,8 @@ public class Business {
     @ColumnInfo(name="latitude")
     private float latitude;
 
-    @ColumnInfo(name="keywords")
-    private String keywords;
-
     @ColumnInfo(name="schedule")
     private String schedule;
-
-    @ColumnInfo(name="attributes")
-    private String attributes;
 
     @ColumnInfo(name="rating")
     private float rating;
@@ -50,9 +44,7 @@ public class Business {
                     int type,
                     float longitude,
                     float latitude,
-                    String keywords,
                     String schedule,
-                    String attributes,
                     float rating) {
 
         this.id = id;
@@ -63,9 +55,7 @@ public class Business {
         this.type = type;
         this.longitude = longitude;
         this.latitude = latitude;
-        this.keywords = keywords;
         this.schedule = schedule;
-        this.attributes = attributes;
         this.rating = rating;
     }
 
@@ -76,11 +66,9 @@ public class Business {
     public int getType() { return type; }
     public float getLongitude() { return longitude; }
     public float getLatitude() { return latitude; }
-    public String getKeywords() { return keywords; }
     public String getSchedule() { return schedule; }
     public String getEmail() { return email; }
     public String getPassword () { return password; }
-    public String getAttributes() { return attributes;}
     public float getRating(){ return rating;}
 
 
@@ -91,10 +79,8 @@ public class Business {
     public void setType(int type) { this.type = type; }
     public void setLongitude(float longitude) { this.longitude = longitude; }
     public void setLatitude(float latitude) { this.latitude = latitude; }
-    public void setKeywords(String keywords) { this.keywords = keywords; }
     public void setSchedule(String schedule) { this.schedule = schedule; }
     public void setEmail(String password) { this.email = email; }
     public void setPassword (String password) { this.password = password; }
-    public void setAttributes(String attributes) { this.attributes = attributes;}
     public void setRating(float rating){this.rating = rating;}
 }

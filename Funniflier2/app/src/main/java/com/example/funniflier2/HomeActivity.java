@@ -5,6 +5,7 @@ import android.graphics.Color;
 import android.os.Bundle;
 
 
+import com.example.funniflier2.db.Business;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
@@ -38,11 +39,16 @@ public class HomeActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //AppDatabase db = Room.databaseBuilder()
-        //db = new DataBase();
-        //log = db.createTable();
 
-        //Toast.makeText(this, log, Toast.LENGTH_LONG).show();
+        DB db = DB.getInstance(this);
+
+        Business b  = new Business(1, "El libra", "dsaf", "asdf", "adsfs",
+                1, 0,0, "asdf", 5);
+        //db.businessDao().insert(b);
+        Business c = db.businessDao().findById(1);
+        log = c.getName();
+
+        Toast.makeText(this, log, Toast.LENGTH_LONG).show();
 
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
