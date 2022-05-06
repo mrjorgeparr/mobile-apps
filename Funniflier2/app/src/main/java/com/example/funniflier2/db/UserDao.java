@@ -1,4 +1,4 @@
-package com.example.funniflier2.db2;
+package com.example.funniflier2.db;
 
 import androidx.room.Dao;
 import androidx.room.Delete;

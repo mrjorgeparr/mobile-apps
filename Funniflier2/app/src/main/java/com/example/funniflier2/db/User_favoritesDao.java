@@ -1,3 +1,5 @@
+/*
+
 package com.example.funniflier2.db2;
 
 import androidx.room.Delete;
@@ -30,3 +32,4 @@ public interface User_favoritesDao {
     void  delete(User_favorites User_favorites);
 
 }
+*/

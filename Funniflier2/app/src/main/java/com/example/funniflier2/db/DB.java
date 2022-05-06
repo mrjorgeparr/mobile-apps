@@ -1,4 +1,4 @@
-package com.example.funniflier2.db2;
+package com.example.funniflier2.db;
 
 import android.content.Context;
 
@@ -6,7 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {User.class, Business.class}, version = 7)
+@Database(entities = {User.class, Business.class, Reservation.class}, version = 7)
 public abstract class DB extends RoomDatabase {
 
     private static final boolean preloadDB = false;
