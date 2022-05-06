@@ -13,8 +13,11 @@ public interface BusinessDao {
     @Query("SELECT * FROM Business")
     List<Business> getAllBusinesses();
 
-    @Query("SELECT * FROM Business WHERE id=:id")
+    @Query("SELECT * FROM Business WHERE id=:id ORDER BY rating")
     Business findById(int id);
+
+    @Query("SELECT * FROM Business WHERE name=:name ORDER BY rating")
+    Business findbyName(String name);
 
     @Query("SELECT * FROM Business WHERE cif=:cif")
     Business findByCif(String cif);
