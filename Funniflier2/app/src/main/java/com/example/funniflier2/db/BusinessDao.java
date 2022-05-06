@@ -15,7 +15,7 @@ public interface BusinessDao {
 
     @Query("SELECT * FROM Business WHERE id=:id ORDER BY rating")
     Business findById(long id);
-
+    
     @Query("SELECT * FROM Business WHERE name=:name ORDER BY rating")
     Business findbyName(String name);
 

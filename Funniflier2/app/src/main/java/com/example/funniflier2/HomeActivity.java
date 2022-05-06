@@ -6,6 +6,8 @@ import android.os.Bundle;
 
 
 import com.example.funniflier2.db.Business;
+import com.example.funniflier2.db.Reservation;
+import com.example.funniflier2.db.User;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
@@ -44,7 +46,22 @@ public class HomeActivity extends AppCompatActivity{
 
         Business b  = new Business(1, "El libra", "dsaf", "asdf", "adsfs",
                 1, 0,0, "asdf", 5);
+
+
+/*
+        User u = new User("carlitos@gmail.com", "lol", "carlitos");
+
         //db.businessDao().insert(b);
+
+        db.userDao().insert(u);
+        db.userDao().insert(u);
+
+        Reservation r = new Reservation(1, 1, 1, "25-04-2018", 1);
+        db.reservationDao().insert(r);
+
+        Reservation a = db.reservationDao().findById(1);
+
+*/
         Business c = db.businessDao().findById(1);
         log = c.getName();
 
