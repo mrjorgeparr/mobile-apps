@@ -39,7 +39,6 @@ public class HomeActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
 
         //AppDatabase db = Room.databaseBuilder()
-        //Toast.makeText(this, toolbar.toString(), Toast.LENGTH_LONG).show();
         //db = new DataBase();
         //log = db.createTable();
 

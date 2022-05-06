@@ -23,7 +23,7 @@ public class Restaurants {
     @ColumnInfo(name="type")
     private long user_id;
 
-    public Reservation(long id, long user_id, long business_id, String date, int duration) {
+    public void Reservation(long id, long user_id, long business_id, String date, int duration) {
         this.id = id;
         this.user_id = user_id;
         this.business_id = business_id;

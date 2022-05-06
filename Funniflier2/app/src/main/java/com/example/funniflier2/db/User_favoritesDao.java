@@ -11,7 +11,7 @@ import java.util.List;
 
 public interface User_favoritesDao {
     @Query("SELECT * FROM User_favorites")
-    List<Reservation> getAllReservations();
+    List<User_favorites> getAllReservations();
 
     @Query("SELECT * FROM User_favorites WHERE u_id=:id")
     Reservation findByUId(int id);
