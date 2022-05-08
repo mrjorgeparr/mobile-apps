@@ -48,10 +48,9 @@
 
     <PreferenceCategory app:title="@string/profile_header">
         <EditTextPreference
+            app:defaultValue="false"
             app:key="name"
-            app:title="@string/name_title"
-            app:defaultValue="Change Name">
-        </EditTextPreference>
+            app:title="@string/name_title"></EditTextPreference>
 
         <EditTextPreference
             app:key="surname"

@@ -44,8 +44,8 @@ public class HomeActivity extends AppCompatActivity{
 
         DB db = DB.getInstance(this);
 
-        Business b  = new Business(1, "El libra", "dsaf", "asdf", "adsfs",
-                1, 0,0, "asdf", 5);
+        //Business b  = new Business(1, "El libra", "dsaf", "asdf", "adsfs",
+                //1, 0,0, "asdf", 5);
 
 
 /*
@@ -62,8 +62,8 @@ public class HomeActivity extends AppCompatActivity{
         Reservation a = db.reservationDao().findById(1);
 
 */
-        Business c = db.businessDao().findById(1);
-        log = c.getName();
+        //Business c = db.businessDao().findById(1);
+        //log = c.getName();
 
         Toast.makeText(this, log, Toast.LENGTH_LONG).show();
 

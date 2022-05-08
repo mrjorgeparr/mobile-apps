@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grey"
     tools:context=".MainActivity">
 
     <Button
@@ -11,6 +12,7 @@
         android:layout_width="157dp"
         android:layout_height="89dp"
         android:onClick="onClick"
+        android:backgroundTint="@color/yellow"
         android:text="Register"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,11 +23,13 @@
         android:id="@+id/button2"
         android:layout_width="178dp"
         android:layout_height="85dp"
-        android:layout_marginBottom="320dp"
+        android:layout_marginBottom="284dp"
         android:onClick="onClick"
+        android:backgroundTint="@color/yellow"
         android:text="Login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="DuplicateIds,HardcodedText,MissingConstraints" />
 

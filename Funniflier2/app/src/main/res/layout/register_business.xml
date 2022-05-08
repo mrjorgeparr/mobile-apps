@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/grey"
     tools:context=".RegisterBusinessActivity">
 
 
@@ -77,6 +78,7 @@
 
         android:layout_marginStart="113dp"
         android:layout_marginTop="32dp"
+        android:backgroundTint="@color/yellow"
         android:text="OK"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/radio2"
