@@ -65,11 +65,11 @@ public class FavoritesFragment extends Fragment {
         hu.setUserId(user_id);
 
 
-        for (int i = 0; i < 6; i++){
+        for (int i = 0; i < 4; i++){
             businesses.add( db.businessDao().findById(i+1));
         }
 
-        for (int i = 0; i < 6; i++) {
+        for (int i = 0; i < 4; i++) {
             hu.putBusinessOnTable(getActivity(), table, businesses.get(i));
         }
 

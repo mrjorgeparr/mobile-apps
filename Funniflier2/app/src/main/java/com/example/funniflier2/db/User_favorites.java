@@ -27,4 +27,28 @@ public class User_favorites {
 
     @ColumnInfo(name="business_id")
     private long business_id;
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public long getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(long user_id) {
+        this.user_id = user_id;
+    }
+
+    public long getBusiness_id() {
+        return business_id;
+    }
+
+    public void setBusiness_id(long business_id) {
+        this.business_id = business_id;
+    }
 }

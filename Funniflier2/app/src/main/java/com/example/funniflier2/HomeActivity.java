@@ -49,41 +49,41 @@ public class HomeActivity extends AppCompatActivity{
         //User u = new User("carlitos@gmail.com", "lol", "carlitos");
 
         //db.userDao().insert(u);
-        /*
-        Business b = new Business("Peluqueria Massimo ", "cafetini@cafetini.com",
-                "libra", "Avenida de la universidad, 33", 1, 50,
-                10, "12-10", 4.23f);
-        db.businessDao().insert(b);
 
         /*
         Business b = new Business("El libra", "libra@libra.com",
                 "libra", "Avenida de Leganees, 3", 1, 50,
-                10, "12-10", 4.5f);
-
+                10, "12-10", 4f);
         db.businessDao().insert(b);
-        b = new Business("El 100 Montaditos", "montaditos@libra.com",
+        b = new Business("Peluqueria Massimo ", "cafetini@cafetini.com",
+                "libra", "Avenida de la universidad, 33", 1, 50,
+                10, "12-10", 4.23f);
+        db.businessDao().insert(b);
+
+        b = new Business("Los 100 Montaditos", "montaditos@libra.com",
                 "libra", "Avenida de Leganes, 3", 1, 50,
                 10, "12-10", 4.5f);
         db.businessDao().insert(b);
         b = new Business("Peluquería Patito Feo", "montaditos@libra.com",
                 "libra", "Avenida Parla,3 ", 1, 50,
-                10, "12-10", 4f);
+                10, "12-10", 3.8f);
         db.businessDao().insert(b);
 
 
 
 
-        db.userDao().insert(u);
 
-        Reservation r = new Reservation(1, 1, 1, "25-04-2018", 1);
+
+
+        /*Reservation r = new Reservation(1, 1, "25-04-2018 12:20", 30);
         db.reservationDao().insert(r);
 
         Reservation a = db.reservationDao().findById(1);
 
-        */
-        //Business c = db.businessDao().findById(1);
-        //log = c.getName();
 
+        Business c = db.businessDao().findById(1);
+        log = c.getName();
+        */
 
 
 

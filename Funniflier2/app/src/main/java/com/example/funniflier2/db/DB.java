@@ -6,12 +6,12 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {User.class, Business.class, Reservation.class}, version = 8)
+@Database(entities = {User.class, Business.class, Reservation.class, User_favorites.class}, version = 9)
 public abstract class DB extends RoomDatabase {
 
     private static final boolean preloadDB = false;
     private static final String PRELOADED_DATABASE_FILE = "testing1";
-    private static final String DB_NAME = "funniflier";
+    private static final String DB_NAME = "funniflier2";
     private static volatile DB instance;
     public abstract UserDao userDao();
     public abstract BusinessDao businessDao();
