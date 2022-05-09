@@ -51,8 +51,8 @@ public class BestBusinessFragment extends Fragment {
         TableLayout table = root.findViewById(R.id.table);
 
         HomeUtils hu = new HomeUtils(getActivity());
-        hu.putBusinessOnTable(getActivity(), table, "This is the recent fragment\n12:00-12:30");
-        hu.putBusinessOnTable(getActivity(), table, "I can not wait to see you\n11:12-12:12");
+        //hu.putBusinessOnTable(getActivity(), table, "This is the recent fragment\n12:00-12:30");
+        //hu.putBusinessOnTable(getActivity(), table, "I can not wait to see you\n11:12-12:12");
 
         return root;
     }

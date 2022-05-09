@@ -20,7 +20,7 @@ import androidx.room.PrimaryKey;
 
 public class Reservation {
 
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private long id;
 
     @ColumnInfo(name="user_id")

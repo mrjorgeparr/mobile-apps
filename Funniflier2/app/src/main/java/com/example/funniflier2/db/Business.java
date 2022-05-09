@@ -36,8 +36,7 @@ public class Business {
     @ColumnInfo(name="rating")
     private float rating;
 
-    public Business(long id,
-                    String name,
+    public Business(String name,
                     String email,
                     String password,
                     String cif,

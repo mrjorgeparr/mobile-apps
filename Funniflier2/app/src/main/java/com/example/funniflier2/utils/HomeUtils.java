@@ -21,6 +21,7 @@ import com.example.funniflier2.BusinessActivity;
 import com.example.funniflier2.LoginActivity;
 import com.example.funniflier2.RegisterActivity;
 import com.example.funniflier2.ReservationActivity;
+import com.example.funniflier2.db.Business;
 
 public class HomeUtils {
     int backgroundColor = 0xFF6200EE;
@@ -79,12 +80,11 @@ public class HomeUtils {
         table.addView(r);
     }
 
-    public void putBusinessOnTable(FragmentActivity context, TableLayout table, String message){
-        putBusinessOnTable(context, table, message, 1);
-    }
-    public void putBusinessOnTable(FragmentActivity context, TableLayout table, String message, int business_id){
+    public void putBusinessOnTable(FragmentActivity context, TableLayout table, Business business){
+        String message = business.getName();
         // Dummy buttons in order to put separation
         Button b = new Button(this.context);
+
         ViewGroup.LayoutParams params = new TableRow.LayoutParams(this.width, this.separation);//ViewGroup.LayoutParams.MATCH_PARENT, height);
         b.setLayoutParams(params);
         b.setBackgroundColor(Color.WHITE);
@@ -103,7 +103,7 @@ public class HomeUtils {
             public void onClick(View v) {
                 Intent intent2 = new Intent(context, BusinessActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putInt("business_id", business_id);
+                bundle.putLong("business_id", business.getId());
                 intent2.putExtras(bundle);
                 context.startActivity(intent2);
             }

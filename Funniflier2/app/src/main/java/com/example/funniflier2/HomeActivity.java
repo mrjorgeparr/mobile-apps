@@ -44,14 +44,21 @@ public class HomeActivity extends AppCompatActivity{
 
         DB db = DB.getInstance(this);
 
-        //Business b  = new Business(1, "El libra", "dsaf", "asdf", "adsfs",
-                //1, 0,0, "asdf", 5);
 
+        Business b = new Business("", "libra@libra.com",
+                "libra", "32432432", 1, 50,
+                10, "12-10", 4.5f);
 
-/*
+        db.businessDao().insert(b);
+        b = new Business("El 100 Montaditos", "libra@libra.com",
+                "libra", "32432432", 1, 50,
+                10, "12-10", 4.5f);
+        db.businessDao().insert(b);
+
+        /*
         User u = new User("carlitos@gmail.com", "lol", "carlitos");
 
-        //db.businessDao().insert(b);
+
 
         db.userDao().insert(u);
         db.userDao().insert(u);
@@ -61,9 +68,12 @@ public class HomeActivity extends AppCompatActivity{
 
         Reservation a = db.reservationDao().findById(1);
 
-*/
+        */
         //Business c = db.businessDao().findById(1);
         //log = c.getName();
+
+
+
 
         Toast.makeText(this, log, Toast.LENGTH_LONG).show();
 
