@@ -130,7 +130,9 @@ public class BusinessActivity extends AppCompatActivity {
     public void goToMaps(View v) {
         Intent intent2 = new Intent(this, MapsActivity.class);
         Bundle bundle = new Bundle();
-        bundle.putLong("business_id", business_id);
+        bundle.putFloat("long", business.getLongitude());
+        bundle.putFloat("lat", business.getLatitude());
+        bundle.putString("name", business.getName());
         intent2.putExtras(bundle);
         this.startActivity(intent2);
     }

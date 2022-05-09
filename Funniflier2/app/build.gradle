@@ -10,6 +10,7 @@ android {
         applicationId "com.example.funniflier2"
         minSdk 23
         targetSdk 32
+        compileSdk 31
         versionCode 1
         versionName "1.0"
 
@@ -48,4 +49,5 @@ dependencies {
     annotationProcessor 'androidx.room:room-compiler:2.3.0'
     implementation('com.journeyapps:zxing-android-embedded:4.3.0') { transitive = false }
     implementation 'com.google.zxing:core:3.3.0'
+
 }
