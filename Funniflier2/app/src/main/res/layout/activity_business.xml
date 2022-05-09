@@ -111,11 +111,13 @@
 
             <Switch
                 android:id="@+id/business_favorites"
-                android:layout_width="130dp"
-                android:layout_height="44dp"
+                android:layout_width="154dp"
+                android:layout_height="67dp"
+                android:layout_marginBottom="44dp"
                 android:text="Favorites"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.48"
                 app:layout_constraintStart_toStartOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>

@@ -11,14 +11,8 @@ import java.util.List;
 
 @Dao
 public interface User_favoritesDao {
-    @Query("SELECT * FROM User_favorites WHERE user_id=:user_id")
+    @Query("SELECT business_id FROM User_favorites WHERE user_id=:user_id")
     List<Long> getFavorites(long user_id);
-
-    @Query("SELECT * FROM User_favorites WHERE user_id=:id")
-    Reservation findByUId(int id);
-
-    @Query("SELECT * FROM User_favorites WHERE business_id=:id")
-    Reservation findByBid(int id);
 
     @Insert
     long[] insert(User_favorites ... user_favorites);
@@ -29,5 +23,7 @@ public interface User_favoritesDao {
     @Delete
     void  delete(User_favorites user_favorites);
 
+    @Query("DELETE FROM User_favorites WHERE business_id=:business_id AND user_id=:user_id")
+    void delete_uf(long user_id, long business_id);
 }
 

@@ -19,7 +19,7 @@ import androidx.room.PrimaryKey;
 })
 
 public class User_favorites {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private long id;
 
     @ColumnInfo(name="user_id")
@@ -27,6 +27,11 @@ public class User_favorites {
 
     @ColumnInfo(name="business_id")
     private long business_id;
+
+    public User_favorites(long user_id, long business_id){
+        this.user_id = user_id;
+        this.business_id = business_id;
+    }
 
     public long getId() {
         return id;

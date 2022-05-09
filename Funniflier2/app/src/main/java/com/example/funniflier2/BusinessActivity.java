@@ -20,6 +20,7 @@ import android.widget.Toast;
 import com.example.funniflier2.db.Business;
 import com.example.funniflier2.db.DB;
 import com.example.funniflier2.db.Reservation;
+import com.example.funniflier2.db.User_favorites;
 import com.example.funniflier2.utils.ReservationDetails;
 
 import java.util.Calendar;
@@ -65,9 +66,10 @@ public class BusinessActivity extends AppCompatActivity {
         sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                 if (isChecked) {
-
+                    User_favorites uf = new User_favorites(user_id, business_id);
+                    db.userFavoritesDao().insert(uf);
                 } else {
-                    // The toggle is disabled
+                    db.userFavoritesDao().delete_uf(user_id, business_id);
                 }
             }
         });

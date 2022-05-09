@@ -12,6 +12,10 @@ public class RecentBusiness {
     @ColumnInfo
     long business_id;
 
+    public RecentBusiness(long business_id) {
+        this.business_id = business_id;
+    }
+
     public long getId() {
         return id;
     }

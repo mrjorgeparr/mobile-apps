@@ -86,8 +86,8 @@ public class HomeActivity extends AppCompatActivity{
         log = c.getName();
 
 
-
         */
+
         //Toast.makeText(this, log, Toast.LENGTH_LONG).show();
 
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
