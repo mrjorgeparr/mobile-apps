@@ -50,7 +50,7 @@ public class HomeActivity extends AppCompatActivity{
 
         //db.userDao().insert(u);
 
-        /*
+
         Business b = new Business("El libra", "libra@libra.com",
                 "libra", "Avenida de Leganees, 3", 1, 50,
                 10, "12-10", 4f);
