@@ -5,11 +5,16 @@ import android.graphics.Color;
 import android.os.Bundle;
 
 
+import com.example.funniflier2.db.Business;
+import com.example.funniflier2.db.Reservation;
+import com.example.funniflier2.db.User;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 
+import android.widget.SearchView;
 import androidx.appcompat.widget.Toolbar;
+import androidx.room.Room;
 import androidx.viewpager.widget.ViewPager;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -26,6 +31,7 @@ import android.widget.Toast;
 import com.example.funniflier2.ui.home.SectionsPagerAdapter;
 import com.example.funniflier2.databinding.ActivityHomeBinding;
 
+import com.example.funniflier2.db.DB;
 
 public class HomeBusinessActivity extends AppCompatActivity{
     private ActivityHomeBinding binding;
@@ -35,12 +41,52 @@ public class HomeBusinessActivity extends AppCompatActivity{
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //Toast.makeText(this, toolbar.toString(), Toast.LENGTH_LONG).show();
 
-        //db = new DataBase();
-        //log = db.createTable();
-        log="Welcome";
-        //Toast.makeText(this, log, Toast.LENGTH_LONG).show();
+        DB db = DB.getInstance(this);
+
+        /*
+        Business b = new Business("Peluqueria Massimo ", "cafetini@cafetini.com",
+                "libra", "Avenida de la universidad, 33", 1, 50,
+                10, "12-10", 4.23f);
+        db.businessDao().insert(b);
+
+        /*
+        Business b = new Business("El libra", "libra@libra.com",
+                "libra", "Avenida de Leganees, 3", 1, 50,
+                10, "12-10", 4.5f);
+
+        db.businessDao().insert(b);
+        b = new Business("El 100 Montaditos", "montaditos@libra.com",
+                "libra", "Avenida de Leganes, 3", 1, 50,
+                10, "12-10", 4.5f);
+        db.businessDao().insert(b);
+        b = new Business("Peluquería Patito Feo", "montaditos@libra.com",
+                "libra", "Avenida Parla,3 ", 1, 50,
+                10, "12-10", 4f);
+        db.businessDao().insert(b);
+
+
+
+        //User u = new User("carlitos@gmail.com", "lol", "carlitos");
+
+
+
+        db.userDao().insert(u);
+        db.userDao().insert(u);
+
+        Reservation r = new Reservation(1, 1, 1, "25-04-2018", 1);
+        db.reservationDao().insert(r);
+
+        Reservation a = db.reservationDao().findById(1);
+
+        */
+        //Business c = db.businessDao().findById(1);
+        //log = c.getName();
+
+
+
+
+        Toast.makeText(this, log, Toast.LENGTH_LONG).show();
 
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
@@ -50,28 +96,34 @@ public class HomeBusinessActivity extends AppCompatActivity{
         viewPager.setAdapter(sectionsPagerAdapter);
         TabLayout tabs = binding.tabs;
         tabs.setupWithViewPager(viewPager);
-/*
-        FloatingActionButton fab = binding.fab;
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });*/
     }
 
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.home, menu);
+
+        MenuItem menuItem = menu.findItem(R.id.search_action);
+        SearchView searchView = (SearchView) menuItem.getActionView();
+        searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String s) {
+                goToSearch(menuItem);
+                return true;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String s) {
+                return false;
+            }
+        });
         return true;
     }
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == R.id.action_search) {
-            Log.d(this.getLocalClassName(), "TODO: Implement search");
+            goToSearch(item);
             return true;
         } else if (item.getItemId() == R.id.action_settings) {
             Log.d(this.getLocalClassName(), "TODO: Implement settings");
@@ -85,7 +137,7 @@ public class HomeBusinessActivity extends AppCompatActivity{
     public void showPopup(View v) {
         PopupMenu popup = new PopupMenu(this, v);
         MenuInflater inflater = popup.getMenuInflater();
-        inflater.inflate(R.menu.popup_business, popup.getMenu());
+        inflater.inflate(R.menu.popup_home, popup.getMenu());
         popup.show();
     }
 
@@ -103,6 +155,13 @@ public class HomeBusinessActivity extends AppCompatActivity{
 
     public void goToSettings(MenuItem item){
         Intent intent2 = new Intent(this, SettingsActivity.class);
+        Bundle bundle = new Bundle();
+        intent2.putExtras(bundle);
+        this.startActivity(intent2);
+    }
+
+    public void goToSearch(MenuItem item){
+        Intent intent2 = new Intent(this, SearchActivity.class);
         Bundle bundle = new Bundle();
         intent2.putExtras(bundle);
         this.startActivity(intent2);

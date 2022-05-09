@@ -22,17 +22,17 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="24dp"
         android:hint="Address"
         app:layout_constraintTop_toBottomOf="@+id/business_name"
         tools:ignore="Autofill,HardcodedText,MissingConstraints,TextFields"
-        tools:layout_editor_absoluteX="0dp" />
+        tools:layout_editor_absoluteX="-16dp" />
 
     <EditText
-        android:id="@+id/user_email"
+        android:id="@+id/business_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="20dp"
         android:hint="email@domain.com"
         android:inputType="textEmailAddress"
         app:layout_constraintTop_toBottomOf="@+id/business_activity_schedule"
@@ -43,7 +43,7 @@
         android:id="@+id/business_activity_schedule"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="16dp"
 
         android:hint="Schedule"
         app:layout_constraintTop_toBottomOf="@+id/business_address"
@@ -51,13 +51,13 @@
         tools:layout_editor_absoluteX="0dp" />
 
     <EditText
-        android:id="@+id/user_password"
+        android:id="@+id/business_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="14dp"
         android:hint="password"
         android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@+id/user_email"
+        app:layout_constraintTop_toBottomOf="@+id/business_email"
         tools:ignore="Autofill,HardcodedText,MissingConstraints"
         tools:layout_editor_absoluteX="0dp" />
 
@@ -76,35 +76,11 @@
         android:layout_height="116dp"
 
         android:layout_marginStart="112dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="64dp"
         android:text="OK"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radio2"
+        app:layout_constraintTop_toBottomOf="@+id/business_password"
         tools:ignore="HardcodedText,MissingConstraints" />
-
-    <RadioButton
-        android:id="@+id/radio1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="152dp"
-        android:layout_marginTop="24dp"
-        android:onClick="onRadioButtonClicked"
-        android:text="Restaurant"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user_password"
-        tools:ignore="HardcodedText,OnClick" />
-
-    <RadioButton
-        android:id="@+id/radio2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="147dp"
-        android:layout_marginTop="12dp"
-        android:onClick="onRadioButtonClicked"
-        android:text="Hairdresser"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/radio1"
-        tools:ignore="HardcodedText" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

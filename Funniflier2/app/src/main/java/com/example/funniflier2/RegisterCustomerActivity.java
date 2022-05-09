@@ -32,7 +32,7 @@ public class RegisterCustomerActivity extends AppCompatActivity implements View.
             EditText nm = (EditText) findViewById(R.id.user_name);
             String name = nm.getText().toString();
             DB db=DB.getInstance(this);
-            User user=new User(1, email, password, name);
+            User user=new User(email, password, name);
 
             db.userDao().insert(user);
             Intent intent = new Intent(this, HomeActivity.class);
