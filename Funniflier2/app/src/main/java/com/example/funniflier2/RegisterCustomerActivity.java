@@ -25,10 +25,15 @@ public class RegisterCustomerActivity extends AppCompatActivity implements View.
 
     public void onClick(View v) {
         if (v.getId() == R.id.ok_button) {
-            EditText ed = (EditText) findViewById(R.id.user_email);
-            String email = ed.getText().toString();
-            User user=new User(1, email, "user_password", "user_name");
+            EditText em = (EditText) findViewById(R.id.user_email);
+            String email = em.getText().toString();
+            EditText pw = (EditText) findViewById(R.id.user_password);
+            String password = pw.getText().toString();
+            EditText nm = (EditText) findViewById(R.id.user_name);
+            String name = nm.getText().toString();
             DB db=DB.getInstance(this);
+            User user=new User(1, email, password, name);
+
             db.userDao().insert(user);
             Intent intent = new Intent(this, HomeActivity.class);
             startActivity(intent);
