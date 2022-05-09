@@ -23,4 +23,12 @@ public class ReservationDetails {
         this.hour = hour;
         this.minute = minute;
     }
+
+    public String toString(){
+        String s = "";
+         s  = s + Integer.toString(this.year) + "-" + Integer.toString(this.month);
+         s = s + Integer.toString(this.day) + " " + Integer.toString(this.hour) + ":";
+         s = s + Integer.toString(this.minute);
+         return s;
+    }
 }

@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
+import com.example.funniflier2.HomeActivity;
 import com.example.funniflier2.R;
 import com.example.funniflier2.databinding.FragmentHomeBinding;
 import com.example.funniflier2.db.Business;
@@ -59,6 +60,9 @@ public class FavoritesFragment extends Fragment {
 
         db = DB.getInstance(getActivity());
         HomeUtils hu = new HomeUtils(getActivity());
+
+        long user_id = ((HomeActivity) getActivity()).user_id;
+        hu.setUserId(user_id);
 
 
         for (int i = 0; i < 6; i++){
