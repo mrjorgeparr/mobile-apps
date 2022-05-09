@@ -35,8 +35,8 @@ public class Reservation {
     @ColumnInfo(name="duration")
     private int duration = 30;
 
-    public Reservation(long id, long user_id, long business_id, String date, int duration) {
-        this.id = id;
+    public Reservation(long user_id, long business_id, String date, int duration) {
+
         this.user_id = user_id;
         this.business_id = business_id;
         this.date = date;

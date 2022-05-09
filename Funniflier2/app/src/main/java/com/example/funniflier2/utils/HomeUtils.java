@@ -27,6 +27,7 @@ public class HomeUtils {
     int backgroundColor = 0xFF6200EE;
     int textColor = Color.WHITE;
     int height, width, separation;
+    long user_id;
     FragmentActivity context;
 
 
@@ -104,6 +105,7 @@ public class HomeUtils {
                 Intent intent2 = new Intent(context, BusinessActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putLong("business_id", business.getId());
+                bundle.putLong("user_id", user_id);
                 intent2.putExtras(bundle);
                 context.startActivity(intent2);
             }
@@ -111,6 +113,10 @@ public class HomeUtils {
         r = new TableRow(this.context);
         r.addView(b);
         table.addView(r);
+    }
+
+    public void setUserId(long id){
+        this.user_id = id;
     }
 
 }

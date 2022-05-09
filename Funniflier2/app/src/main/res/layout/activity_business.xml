@@ -90,76 +90,13 @@
                 android:layout_height="41dp"
                 android:layout_marginTop="4dp"
                 android:layout_marginEnd="16dp"
+                android:clickable="false"
+                android:contextClickable="false"
+                android:isIndicator="true"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.869"
                 app:layout_constraintStart_toEndOf="@+id/imageView2"
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
-            <RadioGroup
-                android:id="@+id/radioGroup"
-                android:layout_width="wrap_content"
-                android:layout_height="58dp"
-                android:layout_marginStart="8dp"
-                android:layout_marginBottom="36dp"
-                android:orientation="horizontal"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <RadioButton
-                    android:id="@+id/business_rate1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="1" />
-
-                <RadioButton
-                    android:id="@+id/business_rate2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:minHeight="48dp"
-                    android:text="2" />
-
-                <RadioButton
-                    android:id="@+id/business_rate3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="3" />
-
-                <RadioButton
-                    android:id="@+id/business_rate4"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4" />
-
-                <RadioButton
-                    android:id="@+id/business_rate5"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="5" />
-
-            </RadioGroup>
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="62dp"
-                android:layout_height="62dp"
-                android:layout_marginStart="6dp"
-                android:layout_marginBottom="36dp"
-                android:onClick="rate"
-                android:text="Ok"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.478"
-                app:layout_constraintStart_toEndOf="@+id/radioGroup" />
-
-            <TextView
-                android:id="@+id/rate_text"
-                android:layout_width="238dp"
-                android:layout_height="35dp"
-                android:layout_marginBottom="4dp"
-                android:text="Give a rate to this business:"
-                android:textSize="16sp"
-                app:layout_constraintBottom_toTopOf="@+id/radioGroup"
-                app:layout_constraintStart_toStartOf="parent" />
 
             <Button
                 android:id="@+id/business_reservation_button"
@@ -171,6 +108,14 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/business_activity_schedule" />
+
+            <Switch
+                android:id="@+id/business_favorites"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Favorites"
+                tools:layout_editor_absoluteX="151dp"
+                tools:layout_editor_absoluteY="590dp" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 

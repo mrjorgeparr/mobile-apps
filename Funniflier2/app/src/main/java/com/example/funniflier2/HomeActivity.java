@@ -35,15 +35,20 @@ import com.example.funniflier2.db.DB;
 
 public class HomeActivity extends AppCompatActivity{
     private ActivityHomeBinding binding;
+    public long user_id;
     String log;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
+        Bundle extra = getIntent().getExtras();
+        user_id = 1;//extra.getLong("user_id");
         DB db = DB.getInstance(this);
 
+        //User u = new User("carlitos@gmail.com", "lol", "carlitos");
+
+        //db.userDao().insert(u);
         /*
         Business b = new Business("Peluqueria Massimo ", "cafetini@cafetini.com",
                 "libra", "Avenida de la universidad, 33", 1, 50,
@@ -67,11 +72,7 @@ public class HomeActivity extends AppCompatActivity{
 
 
 
-        //User u = new User("carlitos@gmail.com", "lol", "carlitos");
 
-
-
-        db.userDao().insert(u);
         db.userDao().insert(u);
 
         Reservation r = new Reservation(1, 1, 1, "25-04-2018", 1);
@@ -86,7 +87,7 @@ public class HomeActivity extends AppCompatActivity{
 
 
 
-        Toast.makeText(this, log, Toast.LENGTH_LONG).show();
+        //Toast.makeText(this, log, Toast.LENGTH_LONG).show();
 
         binding = ActivityHomeBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
