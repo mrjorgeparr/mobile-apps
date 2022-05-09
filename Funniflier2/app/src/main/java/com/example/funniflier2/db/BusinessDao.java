@@ -19,8 +19,8 @@ public interface BusinessDao {
     @Query("SELECT * FROM Business WHERE name=:name ORDER BY rating")
     Business findbyName(String name);
 
-    @Query("SELECT * FROM Business WHERE cif=:cif")
-    Business findByCif(String cif);
+    @Query("SELECT * FROM Business WHERE address=:address")
+    Business findByAddress(String address);
 
     @Query("SELECT DISTINCT * FROM Business WHERE email=:email")
     User findByEmail(String email);

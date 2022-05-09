@@ -44,19 +44,30 @@ public class HomeActivity extends AppCompatActivity{
 
         DB db = DB.getInstance(this);
 
-
-        Business b = new Business("", "libra@libra.com",
-                "libra", "32432432", 1, 50,
-                10, "12-10", 4.5f);
-
-        db.businessDao().insert(b);
-        b = new Business("El 100 Montaditos", "libra@libra.com",
-                "libra", "32432432", 1, 50,
-                10, "12-10", 4.5f);
+        /*
+        Business b = new Business("Peluqueria Massimo ", "cafetini@cafetini.com",
+                "libra", "Avenida de la universidad, 33", 1, 50,
+                10, "12-10", 4.23f);
         db.businessDao().insert(b);
 
         /*
-        User u = new User("carlitos@gmail.com", "lol", "carlitos");
+        Business b = new Business("El libra", "libra@libra.com",
+                "libra", "Avenida de Leganees, 3", 1, 50,
+                10, "12-10", 4.5f);
+
+        db.businessDao().insert(b);
+        b = new Business("El 100 Montaditos", "montaditos@libra.com",
+                "libra", "Avenida de Leganes, 3", 1, 50,
+                10, "12-10", 4.5f);
+        db.businessDao().insert(b);
+        b = new Business("Peluquería Patito Feo", "montaditos@libra.com",
+                "libra", "Avenida Parla,3 ", 1, 50,
+                10, "12-10", 4f);
+        db.businessDao().insert(b);
+
+
+
+        //User u = new User("carlitos@gmail.com", "lol", "carlitos");
 
 
 

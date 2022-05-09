@@ -6,7 +6,7 @@ import androidx.room.Database;
 import androidx.room.Room;
 import androidx.room.RoomDatabase;
 
-@Database(entities = {User.class, Business.class, Reservation.class}, version = 7)
+@Database(entities = {User.class, Business.class, Reservation.class}, version = 8)
 public abstract class DB extends RoomDatabase {
 
     private static final boolean preloadDB = false;

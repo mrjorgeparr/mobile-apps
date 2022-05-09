@@ -18,8 +18,8 @@ public class Business {
     @ColumnInfo(name="password")
     private String password;
 
-    @ColumnInfo(name="cif")
-    private String cif;
+    @ColumnInfo(name="address")
+    private String address;
 
     @ColumnInfo(name="type")
     private int type;
@@ -39,7 +39,7 @@ public class Business {
     public Business(String name,
                     String email,
                     String password,
-                    String cif,
+                    String address,
                     int type,
                     float longitude,
                     float latitude,
@@ -50,18 +50,18 @@ public class Business {
         this.name = name;
         this.email = email;
         this.password = password;
-        this.cif = cif;
         this.type = type;
         this.longitude = longitude;
         this.latitude = latitude;
         this.schedule = schedule;
         this.rating = rating;
+        this.address = address;
     }
 
     //Getters
     public long getId() { return id; }
     public String getName() { return name; }
-    public String getCif() { return cif; }
+    public String getAddress() { return address; }
     public int getType() { return type; }
     public float getLongitude() { return longitude; }
     public float getLatitude() { return latitude; }
@@ -74,7 +74,7 @@ public class Business {
     //Setters
     public void setId(long id) { this.id = id; }
     public void setName(String name) { this.name = name; }
-    public void setCif(String cif) { this.cif = cif; }
+    public void setAddress(String address) { this.address = address; }
     public void setType(int type) { this.type = type; }
     public void setLongitude(float longitude) { this.longitude = longitude; }
     public void setLatitude(float latitude) { this.latitude = latitude; }
