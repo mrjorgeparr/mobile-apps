@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
     tools:context=".ReservationActivity">
 
     <CalendarView
@@ -33,7 +32,6 @@
         android:layout_width="202dp"
         android:layout_height="59dp"
         android:layout_marginTop="16dp"
-        android:backgroundTint="@color/yellow"
         android:text="Cancel Reservation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -57,7 +55,6 @@
         android:id="@+id/reservation_business_button"
         android:layout_width="391dp"
         android:layout_height="69dp"
-        android:backgroundTint="@color/yellow"
         android:text="Peluquería juanita"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

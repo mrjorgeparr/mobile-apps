@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/grey"
     tools:context=".BusinessActivity">
 
     <LinearLayout
@@ -146,7 +145,6 @@
                 android:layout_marginStart="6dp"
                 android:layout_marginBottom="36dp"
                 android:onClick="rate"
-                android:backgroundTint="@color/yellow"
                 android:text="Ok"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -169,7 +167,6 @@
                 android:layout_height="62dp"
                 android:layout_marginTop="8dp"
                 android:onClick="reserve"
-                android:backgroundTint="@color/yellow"
                 android:text="Reserve"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
