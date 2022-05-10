@@ -74,7 +74,7 @@ public class ReservationsFragment extends Fragment {
         List<Reservation> reservations = db.reservationDao().getUserReservations(user_id);
 
         for(int i=0; i < reservations.size(); i++){
-            hu.putReservationOnTable(getActivity(), table, "I really like your body\n12:00-12:30");
+            hu.putReservationOnTable(getActivity(), table, reservations.get(i));
         }
 
         return root;

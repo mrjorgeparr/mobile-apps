@@ -16,23 +16,31 @@ import android.widget.TableRow;
 import android.widget.Toast;
 
 import com.example.funniflier2.databinding.ActivityReservationBinding;
+import com.example.funniflier2.db.DB;
+import com.example.funniflier2.utils.ReservationDetails;
 
 public class ReservationActivity extends AppCompatActivity {
 
-    int reservation_id;
-    int business_id;
+    long reservation_id;
+    long business_id;
+    long user_id;
+    ReservationDetails rd;
     Button goToBusinessButton;
     Button cancelReservationButton;
     ReservationActivity context = this;
+    DB db = DB.getInstance(this);
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reservation);
 
         Bundle bundle = getIntent().getExtras();
-        this.reservation_id = bundle.getInt("reservation_id");
 
-        Log.d("message", "reservation "+Integer.toString(this.reservation_id));
+        this.reservation_id = bundle.getLong("reservation_id");
+        this.business_id = bundle.getLong("business_id");
+        this.user_id = bundle.getLong("user_id");
+
+        Log.d("message", "reservation " + Long.toString(this.reservation_id));
 
         // When clicked carries you to the Business Activity
         goToBusinessButton = (Button) findViewById(R.id.reservation_business_button);
@@ -40,7 +48,8 @@ public class ReservationActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent2 = new Intent(context, BusinessActivity.class);
                 Bundle bundle = new Bundle();
-                bundle.putInt("business_id", business_id);
+                bundle.putLong("business_id", business_id);
+                bundle.putLong("user_id", user_id);
                 intent2.putExtras(bundle);
                 context.startActivity(intent2);
             }
@@ -65,7 +74,7 @@ public class ReservationActivity extends AppCompatActivity {
                                 // Redirects to home activity
                                 Intent intent2 = new Intent(context, HomeActivity.class);
                                 Bundle bundle = new Bundle();
-                                bundle.putInt("business_id", business_id);
+                                bundle.putLong("user_id", user_id);
                                 intent2.putExtras(bundle);
                                 context.startActivity(intent2);
                             }
