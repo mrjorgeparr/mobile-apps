@@ -2,20 +2,20 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F3EDED"
-    tools:context=".ui.home.ReservationsFragment">
+    tools:context=".HomeBusinessActivity">
 
     <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="match_parent"
-        android:layout_height="fill_parent"
+        android:id="@+id/scrollView3"
+        android:layout_width="411dp"
+        android:layout_height="650dp"
+        android:layout_marginTop="13dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/textView">
 
         <TableLayout
             android:id="@+id/table_business"
@@ -28,4 +28,13 @@
         </TableLayout>
     </ScrollView>
 
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="331dp"
+        android:layout_height="69dp"
+        android:text="Reservations"
+        android:textSize="34sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

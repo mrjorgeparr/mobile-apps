@@ -1,36 +1,26 @@
 package com.example.funniflier2.ui.home;
 
 import android.annotation.SuppressLint;
-import android.content.Context;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
-import androidx.lifecycle.ViewModelProvider;
 
 import com.example.funniflier2.HomeActivity;
 import com.example.funniflier2.R;
 import com.example.funniflier2.databinding.*;
 
-import android.widget.Button;
 import android.widget.TableLayout;
-import android.widget.TableRow;
-import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.example.funniflier2.db.DB;
 import com.example.funniflier2.db.Reservation;
 import com.example.funniflier2.utils.HomeUtils;
-import java.util.Date;
+
 import java.util.List;
 
 /**
@@ -65,7 +55,7 @@ public class ReservationsFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        TableLayout table = root.findViewById(R.id.table);
+        TableLayout table = root.findViewById(R.id.table_business);
 
         HomeUtils hu = new HomeUtils(getActivity());
         long user_id = ((HomeActivity) getActivity()).user_id;

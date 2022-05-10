@@ -1,45 +1,43 @@
 package com.example.funniflier2;
 
-import android.content.Intent;
-import android.graphics.Color;
-import android.os.Bundle;
-
-
-import com.example.funniflier2.db.Business;
-import com.example.funniflier2.db.Reservation;
-import com.example.funniflier2.db.User;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
-import com.google.android.material.snackbar.Snackbar;
-import com.google.android.material.tabs.TabLayout;
-
-import android.widget.SearchView;
-import androidx.appcompat.widget.Toolbar;
-import androidx.room.Room;
-import androidx.viewpager.widget.ViewPager;
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
-
-import android.util.Log;
-import android.view.Menu;
-import android.view.MenuInflater;
-import android.view.MenuItem;
+import android.annotation.SuppressLint;
+import android.os.Build;
+import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
-import android.widget.PopupMenu;
-import android.widget.ScrollView;
-import android.widget.Toast;
+import android.view.ViewGroup;
+import android.widget.TableLayout;
 
-import com.example.funniflier2.ui.home.SectionsPagerAdapter;
-import com.example.funniflier2.databinding.ActivityHomeBinding;
-
+import com.example.funniflier2.databinding.FragmentHomeBinding;
 import com.example.funniflier2.db.DB;
+import com.example.funniflier2.db.Reservation;
+import com.example.funniflier2.ui.home.ReservationsFragment;
+import com.example.funniflier2.utils.HomeUtils;
 
-public class HomeBusinessActivity extends AppCompatActivity{
-    private ActivityHomeBinding binding;
-    String log;
+import java.util.List;
+
+public class HomeBusinessActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_business_home);
+
+            Bundle bundle = getIntent().getExtras();
+            DB db = DB.getInstance(this);
+            long id = bundle.getLong("business_id");
+
+            TableLayout table = (TableLayout) findViewById(R.id.table_business);
+            HomeUtils hu = new HomeUtils(this);
+            hu.setUserId(0);
+
+            List<Reservation> reservations = db.reservationDao().getUserReservations(id);
+            for(int i=0; i< reservations.size(); i++){
+                hu.putReservationOnTable(this, table, reservations.get(i));
+            }
     }
 }

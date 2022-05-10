@@ -54,7 +54,7 @@ import java.util.List;
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        TableLayout table = root.findViewById(R.id.table);
+        TableLayout table = root.findViewById(R.id.table_business);
 
         HomeUtils hu = new HomeUtils(getActivity());
 

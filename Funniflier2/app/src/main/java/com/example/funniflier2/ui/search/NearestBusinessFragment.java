@@ -48,7 +48,7 @@ public class NearestBusinessFragment extends Fragment {
 
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        TableLayout table = root.findViewById(R.id.table);
+        TableLayout table = root.findViewById(R.id.table_business);
 
         HomeUtils hu = new HomeUtils(getActivity());
         //hu.putBusinessOnTable(getActivity(), table, "This is the recent fragment\n12:00-12:30");
