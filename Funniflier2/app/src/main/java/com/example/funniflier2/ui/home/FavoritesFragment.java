@@ -62,14 +62,16 @@ public class FavoritesFragment extends Fragment {
         HomeUtils hu = new HomeUtils(getActivity());
 
         long user_id = ((HomeActivity) getActivity()).user_id;
+
+        List <Long> ids = db.userFavoritesDao().getFavorites(user_id);
         hu.setUserId(user_id);
 
 
-        for (int i = 0; i < 4; i++){
-            businesses.add( db.businessDao().findById(i+1));
+        for (int i = 0; i < ids.size(); i++){
+            businesses.add( db.businessDao().findById(ids.get(i)));
         }
 
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < businesses.size(); i++) {
             hu.putBusinessOnTable(getActivity(), table, businesses.get(i));
         }
 

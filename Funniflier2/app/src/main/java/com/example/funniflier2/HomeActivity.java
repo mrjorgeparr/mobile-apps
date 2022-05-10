@@ -37,7 +37,7 @@ public class HomeActivity extends AppCompatActivity{
     private ActivityHomeBinding binding;
     public long user_id;
     String log;
-
+    HomeActivity context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -110,7 +110,12 @@ public class HomeActivity extends AppCompatActivity{
         searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String s) {
-                goToSearch(menuItem);
+                Intent intent2 = new Intent(context, SearchActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putString("query", s);
+                bundle.putLong("user_id", user_id);
+                intent2.putExtras(bundle);
+                startActivity(intent2);
                 return true;
             }
 
@@ -127,8 +132,8 @@ public class HomeActivity extends AppCompatActivity{
         if (item.getItemId() == R.id.action_search) {
             goToSearch(item);
             return true;
-        } else if (item.getItemId() == R.id.action_settings) {
-            Log.d(this.getLocalClassName(), "TODO: Implement settings");
+        } else if (item.getItemId() == R.id.action_about) {
+            Toast.makeText(context, "Done by CM, MN, JP", Toast.LENGTH_LONG).show();
             return true;
         } else {
             return super.onOptionsItemSelected(item);
@@ -165,6 +170,7 @@ public class HomeActivity extends AppCompatActivity{
     public void goToSearch(MenuItem item){
         Intent intent2 = new Intent(this, SearchActivity.class);
         Bundle bundle = new Bundle();
+        bundle.putLong("user_id", user_id);
         intent2.putExtras(bundle);
         this.startActivity(intent2);
     }

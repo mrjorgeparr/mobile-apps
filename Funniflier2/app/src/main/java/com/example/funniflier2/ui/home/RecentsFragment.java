@@ -12,9 +12,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
 
+import com.example.funniflier2.HomeActivity;
 import com.example.funniflier2.R;
 import com.example.funniflier2.databinding.FragmentHomeBinding;
+import com.example.funniflier2.db.Business;
+import com.example.funniflier2.db.DB;
 import com.example.funniflier2.utils.HomeUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * A placeholder fragment containing a simple view.
@@ -24,7 +30,8 @@ import com.example.funniflier2.utils.HomeUtils;
     //private static final String ARG_SECTION_NUMBER = "section_number";
     private PageViewModel pageViewModel;
     private FragmentHomeBinding binding;
-
+    DB db = DB.getInstance(getActivity());
+    List<Business> businesses = new ArrayList<Business>();
 
     public static RecentsFragment newInstance() {
         RecentsFragment fragment = new RecentsFragment();
@@ -50,6 +57,20 @@ import com.example.funniflier2.utils.HomeUtils;
         TableLayout table = root.findViewById(R.id.table);
 
         HomeUtils hu = new HomeUtils(getActivity());
+
+        long user_id = ((HomeActivity) getActivity()).user_id;
+
+        List<Long> ids = db.recentBusinessDao().getRecent();
+        hu.setUserId(user_id);
+
+
+        for (int i = 0; i < ids.size(); i++){
+            businesses.add( db.businessDao().findById(ids.get(i)));
+        }
+
+        for (int i = 0; i < businesses.size(); i++) {
+            hu.putBusinessOnTable(getActivity(), table, businesses.get(i));
+        }
         //hu.putBusinessOnTable(getActivity(), table, "This is the recent fragment\n12:00-12:30");
         //hu.putBusinessOnTable(getActivity(), table, "I can not wait to see you\n11:12-12:12");
 

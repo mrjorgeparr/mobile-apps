@@ -8,7 +8,7 @@ import java.util.List;
 
 @Dao
 public interface RecentBusinessDao {
-    @Query("SELECT business_id FROM RecentBusiness ORDER BY id DESC LIMIT 10")
+    @Query("SELECT DISTINCT business_id FROM RecentBusiness ORDER BY id DESC LIMIT 10")
     List<Long> getRecent();
 
     @Insert

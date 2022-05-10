@@ -28,6 +28,9 @@ public interface BusinessDao {
     @Query("SELECT DISTINCT * FROM Business WHERE email=:email")
     Business getByEmail(String email);
 
+    @Query("SELECT * FROM Business WHERE name LIKE :str ORDER by rating LIMIT 20")
+    List<Business> findByStr(String str);
+
     @Insert
     long insert(Business Business);
 

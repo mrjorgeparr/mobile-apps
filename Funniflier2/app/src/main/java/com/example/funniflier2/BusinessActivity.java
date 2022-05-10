@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.funniflier2.db.Business;
 import com.example.funniflier2.db.DB;
+import com.example.funniflier2.db.RecentBusiness;
 import com.example.funniflier2.db.Reservation;
 import com.example.funniflier2.db.User_favorites;
 import com.example.funniflier2.utils.ReservationDetails;
@@ -42,6 +43,9 @@ public class BusinessActivity extends AppCompatActivity {
         business_id = extras.getLong("business_id");
         user_id = extras.getLong("user_id");
         business = db.businessDao().findById(business_id);
+
+        RecentBusiness rb = new RecentBusiness(business_id);
+        db.recentBusinessDao().insert(rb);
 
         Toast.makeText(this, Long.toString(user_id) + " " + Long.toString(business_id), Toast.LENGTH_SHORT).show();
         RatingBar rating = (RatingBar) findViewById(R.id.business_rating);
