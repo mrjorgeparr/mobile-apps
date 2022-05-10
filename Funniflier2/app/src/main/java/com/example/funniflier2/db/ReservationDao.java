@@ -14,7 +14,7 @@ public interface ReservationDao {
     List<Reservation> getAllReservations();
 
     @Query("SELECT * FROM Reservation WHERE id=:id")
-    Reservation findById(int id);
+    Reservation findById(long id);
 
     @Query("SELECT * FROM Reservation WHERE user_id=:user_id ORDER BY id DESC LIMIT 20")
     List<Reservation> getUserReservations(long user_id);

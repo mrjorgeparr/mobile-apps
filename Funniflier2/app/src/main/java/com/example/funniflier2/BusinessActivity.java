@@ -43,6 +43,7 @@ public class BusinessActivity extends AppCompatActivity {
         user_id = extras.getLong("user_id");
         business = db.businessDao().findById(business_id);
 
+        Toast.makeText(this, Long.toString(user_id) + " " + Long.toString(business_id), Toast.LENGTH_SHORT).show();
         RatingBar rating = (RatingBar) findViewById(R.id.business_rating);
         TextView name = (TextView) findViewById(R.id.business_name_title);
         TextView type = (TextView) findViewById(R.id.business_services);
@@ -123,8 +124,10 @@ public class BusinessActivity extends AppCompatActivity {
         }
 
         ready = false;
+        Toast.makeText(this, Integer.toString(reservation.year), Toast.LENGTH_LONG).show();
         Reservation re = new Reservation(user_id, business_id, reservation.toString(), 30);
-        Toast.makeText(this, "Reservation Completed ", Toast.LENGTH_LONG).show();
+        db.reservationDao().insert(re);
+        //Toast.makeText(this, "Reservation Completed ", Toast.LENGTH_LONG).show();
         goToHome();
         return;
     }

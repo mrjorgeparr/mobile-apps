@@ -12,14 +12,14 @@ public class ReservationDetails {
     //ids
     public long business_id, user_id;
 
-    public SimpleDateFormat formatter1=new SimpleDateFormat("yyyy-MM-dd HH:mm");
+    public SimpleDateFormat formatter1=new SimpleDateFormat("MM-dd HH:mm");
 
     public ReservationDetails(){
 
     }
 
     public void setDate(int year, int month, int day){
-        this.year = year;
+        this.year = 2022;
         this.month = month;
         this.day = day;
     }
@@ -31,8 +31,8 @@ public class ReservationDetails {
     }
 
     public String toString(){
-        Date date = new Date(this.year, this.month, this.day, this.hour, this.minute);
-        return formatter1.format(date);
+        Date date = new Date(2022, this.month, this.day, this.hour, this.minute);
+        return "2022-" + formatter1.format(date);
         /*
         String s = "";
          s  = s + Integer.toString(this.year) + "-" + Integer.toString(this.month);

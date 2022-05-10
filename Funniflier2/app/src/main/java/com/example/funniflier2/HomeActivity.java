@@ -46,7 +46,7 @@ public class HomeActivity extends AppCompatActivity{
         user_id = 1;//extra.getLong("user_id");
         DB db = DB.getInstance(this);
 
-        /*
+/*
         User u = new User("carlitos@gmail.com", "lol", "carlitos");
 
         db.userDao().insert(u);
@@ -76,7 +76,7 @@ public class HomeActivity extends AppCompatActivity{
 
 
 
-        Reservation r = new Reservation(1, 1, "25-04-2018 12:20", 30);
+        Reservation r = new Reservation(1, 1, "2018-04-25 12:20", 30);
         db.reservationDao().insert(r);
 
         Reservation a = db.reservationDao().findById(1);
@@ -86,8 +86,8 @@ public class HomeActivity extends AppCompatActivity{
         log = c.getName();
 
 
-        */
 
+*/
         //Toast.makeText(this, log, Toast.LENGTH_LONG).show();
 
         binding = ActivityHomeBinding.inflate(getLayoutInflater());

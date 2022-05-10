@@ -1,5 +1,7 @@
 package com.example.funniflier2;
 
+import static android.text.TextUtils.replace;
+
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -12,12 +14,19 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CalendarView;
 import android.widget.TableRow;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.funniflier2.databinding.ActivityReservationBinding;
+import com.example.funniflier2.db.Business;
 import com.example.funniflier2.db.DB;
+import com.example.funniflier2.db.Reservation;
 import com.example.funniflier2.utils.ReservationDetails;
+
+import java.text.ParseException;
+import java.util.Date;
 
 public class ReservationActivity extends AppCompatActivity {
 
@@ -36,14 +45,21 @@ public class ReservationActivity extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
 
+        ReservationDetails rd = new ReservationDetails();
         this.reservation_id = bundle.getLong("reservation_id");
         this.business_id = bundle.getLong("business_id");
         this.user_id = bundle.getLong("user_id");
 
-        Log.d("message", "reservation " + Long.toString(this.reservation_id));
+        Reservation reservation = db.reservationDao().findById(reservation_id);
+        Business business = db.businessDao().findById(business_id);
 
+        TextView tv_date = (TextView) findViewById(R.id.reservation_date);
+        tv_date.setText(reservation.getDate());
+
+        Log.d("message", "reservation " + Long.toString(this.reservation_id));
         // When clicked carries you to the Business Activity
         goToBusinessButton = (Button) findViewById(R.id.reservation_business_button);
+        goToBusinessButton.setText(business.getName());
         goToBusinessButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intent2 = new Intent(context, BusinessActivity.class);
@@ -55,6 +71,19 @@ public class ReservationActivity extends AppCompatActivity {
             }
         });
 
+        CalendarView calendar = (CalendarView) findViewById(R.id.reservation_calendar);
+
+        try {
+
+            Date date = rd.formatter1.parse(reservation.getDate().replace("2022-", ""));
+            date.setYear(122);
+            Toast.makeText(this, Long.toString(date.getTime()), Toast.LENGTH_SHORT).show();
+
+            calendar.setDate(date.getTime());
+        } catch (ParseException e) {
+            Toast.makeText(this, "not working", Toast.LENGTH_SHORT).show();
+        }
+
         // When clicked cancels a reservation
         cancelReservationButton = (Button) findViewById(R.id.reservation_cancel_button);
         cancelReservationButton.setOnClickListener(new View.OnClickListener() {
@@ -65,6 +94,8 @@ public class ReservationActivity extends AppCompatActivity {
                 ad.setPositiveButton(R.string.button_yes,
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialog, int arg1) {
+
+                                db.reservationDao().delete(reservation);
                                 // Show a succesful canceled text
                                 String message = getResources().getString(R.string.cancelled_text);
                                 Toast.makeText(context, message,
