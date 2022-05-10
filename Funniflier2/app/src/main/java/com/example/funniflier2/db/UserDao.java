@@ -18,7 +18,7 @@ public interface UserDao {
     User findById(int id);
 
     @Query("SELECT * FROM User WHERE email=:email")
-    User findByEmail(String email);
+    boolean findByEmail(String email);
 
     @Insert
     long insert(User user);

@@ -23,7 +23,7 @@ public interface BusinessDao {
     Business findByAddress(String address);
 
     @Query("SELECT DISTINCT * FROM Business WHERE email=:email")
-    User findByEmail(String email);
+    boolean findByEmail(String email);
 
     @Insert
     long insert(Business Business);
