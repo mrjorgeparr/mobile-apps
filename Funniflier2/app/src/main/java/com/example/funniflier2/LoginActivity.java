@@ -6,11 +6,14 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.funniflier2.db.Business;
 import com.example.funniflier2.db.DB;
+import com.example.funniflier2.db.User;
 import com.example.funniflier2.db.UserDao;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
@@ -32,12 +35,34 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
             String password = pw.getText().toString();
             DB db=DB.getInstance(this);
             if (db.userDao().findByEmail(email)){
+                User u = db.userDao().getByEmail(email);
+
                 Intent intent = new Intent(this, HomeActivity.class);
-                startActivity(intent);
+                if (u.getPassword().equals(password)) {
+                    Bundle bundle = new Bundle();
+                    bundle.putLong("user_id", u.getId());
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(this, "Wrong credentials", Toast.LENGTH_LONG).show();
+                }
             }
-            if (db.businessDao().findByEmail(email)){
-                Intent intent2 = new Intent(this, HomeBusinessActivity.class);
-                startActivity(intent2);
+             else if (db.businessDao().findByEmail(email)){
+
+                Business b = db.businessDao().getByEmail(email);
+
+                Intent intent = new Intent(this, HomeBusinessActivity.class);
+                if (b.getPassword().equals(password)) {
+                    Bundle bundle = new Bundle();
+                    bundle.putLong("business_id", b.getId());
+                    intent.putExtras(bundle);
+                    startActivity(intent);
+                }else{
+                    Toast.makeText(this, "Wrong credentials", Toast.LENGTH_LONG).show();
+                }
+
+            }else {
+                Toast.makeText(this, "Wrong credentials", Toast.LENGTH_LONG).show();
             }
         }
     }

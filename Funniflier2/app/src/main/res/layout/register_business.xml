@@ -82,5 +82,14 @@
         app:layout_constraintTop_toBottomOf="@+id/business_password"
         tools:ignore="HardcodedText,MissingConstraints" />
 
+    <Switch
+        android:id="@+id/is_hairdresser"
+        android:layout_width="227dp"
+        android:layout_height="41dp"
+        android:text="Restaurant/Hairdresser"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/business_password" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -43,7 +43,7 @@ public class HomeActivity extends AppCompatActivity{
         super.onCreate(savedInstanceState);
 
         Bundle extra = getIntent().getExtras();
-        user_id = 1;//extra.getLong("user_id");
+        user_id = extra.getLong("user_id");
         DB db = DB.getInstance(this);
 
 /*

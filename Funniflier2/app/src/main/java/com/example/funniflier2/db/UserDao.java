@@ -20,6 +20,9 @@ public interface UserDao {
     @Query("SELECT * FROM User WHERE email=:email")
     boolean findByEmail(String email);
 
+    @Query("SELECT * FROM User WHERE email=:email")
+    User getByEmail(String email);
+
     @Insert
     long insert(User user);
 

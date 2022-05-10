@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
+import android.widget.Switch;
+import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -44,12 +46,27 @@ public class RegisterBusinessActivity extends AppCompatActivity implements View.
             String address = adr.getText().toString();
             EditText bsc = (EditText) findViewById(R.id.business_activity_schedule);
             String schedule = bsc.getText().toString();
-            DB db=DB.getInstance(this);
-            Business business= new Business(name, email, password, address, 0, 0, 0, schedule, 0);
-            db.businessDao().insert(business);
 
-            Intent intent2 = new Intent(this, HomeBusinessActivity.class);
-            startActivity(intent2);
+            Switch is_hair = (Switch) findViewById(R.id.is_hairdresser);
+
+            int is_hairdresser = 0;
+            if (is_hair.isChecked()){
+                is_hairdresser = 1;
+            }
+            DB db=DB.getInstance(this);
+
+            try {
+                Business business = new Business(name, email, password, address, is_hairdresser, 0, 0, schedule, 0);
+                db.businessDao().insert(business);
+
+                Intent intent2 = new Intent(this, HomeBusinessActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putLong("business_id", business.getId());
+                intent2.putExtras(bundle);
+                startActivity(intent2);
+            } catch (Exception e){
+                Toast.makeText(this, "Error registering business", Toast.LENGTH_LONG).show();
+            }
         }
     }
 

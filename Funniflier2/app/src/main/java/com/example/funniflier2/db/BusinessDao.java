@@ -25,6 +25,9 @@ public interface BusinessDao {
     @Query("SELECT DISTINCT * FROM Business WHERE email=:email")
     boolean findByEmail(String email);
 
+    @Query("SELECT DISTINCT * FROM Business WHERE email=:email")
+    Business getByEmail(String email);
+
     @Insert
     long insert(Business Business);
 

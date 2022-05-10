@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,13 +31,23 @@ public class RegisterCustomerActivity extends AppCompatActivity implements View.
             EditText pw = (EditText) findViewById(R.id.user_password);
             String password = pw.getText().toString();
             EditText nm = (EditText) findViewById(R.id.user_name);
-            String name = nm.getText().toString();
+            EditText ln = (EditText) findViewById(R.id.user_surname1);
+
+            String name = nm.getText().toString() + " " + ln.getText().toString();
+
+
             DB db=DB.getInstance(this);
             User user=new User(email, password, name);
 
-            db.userDao().insert(user);
-            Intent intent = new Intent(this, HomeActivity.class);
-            startActivity(intent);
+            try {
+                db.userDao().insert(user);
+                Intent intent = new Intent(this, HomeActivity.class);
+                Bundle bundle = new Bundle();
+                bundle.putLong("user_id", user.getId());
+                startActivity(intent);
+            } catch (Exception e){
+                Toast.makeText(this, "Email already used", Toast.LENGTH_LONG).show();
+            }
         }
     }
 
