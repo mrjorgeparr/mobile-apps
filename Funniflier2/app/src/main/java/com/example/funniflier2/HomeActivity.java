@@ -46,14 +46,14 @@ public class HomeActivity extends AppCompatActivity{
         user_id = extra.getLong("user_id");
         DB db = DB.getInstance(this);
 
-/*
+        /*
         User u = new User("carlitos@gmail.com", "lol", "carlitos");
 
         db.userDao().insert(u);
 
 
         Business b = new Business("El libra", "libra@libra.com",
-                "libra", "Avenida de Leganees, 3", 1, 50,
+                "libra", "Avenida de Leganees, 3", 0, 50,
                 10, "12-10", 4f);
         db.businessDao().insert(b);
         b = new Business("Peluqueria Massimo ", "cafetini@cafetini.com",
@@ -62,7 +62,7 @@ public class HomeActivity extends AppCompatActivity{
         db.businessDao().insert(b);
 
         b = new Business("Los 100 Montaditos", "montaditos@libra.com",
-                "libra", "Avenida de Leganes, 3", 1, 50,
+                "libra", "Avenida de Leganes, 3", 0, 50,
                 10, "12-10", 4.5f);
         db.businessDao().insert(b);
         b = new Business("Peluquería Patito Feo", "montaditos@libra.com",
@@ -85,9 +85,10 @@ public class HomeActivity extends AppCompatActivity{
         Business c = db.businessDao().findById(1);
         log = c.getName();
 
+        */
 
 
-*/
+
         //Toast.makeText(this, log, Toast.LENGTH_LONG).show();
 
         binding = ActivityHomeBinding.inflate(getLayoutInflater());

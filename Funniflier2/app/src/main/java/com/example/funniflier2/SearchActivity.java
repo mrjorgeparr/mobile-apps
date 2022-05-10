@@ -39,13 +39,17 @@ public class SearchActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
-
         Intent intent = getIntent();
         query = intent.getStringExtra("query");
         user_id = intent.getExtras().getLong("user_id");
-        businesses = db.businessDao().findByStr(query);
 
+        if (query.toLowerCase().contains("restaurant")){
+            businesses = db.businessDao().Search(query, 0);
+        } else if (query.toLowerCase().contains("hair")){
+            businesses = db.businessDao().Search(query, 1);
+        } else {
+            businesses = db.businessDao().Search(query);
+        }
 
         Toast.makeText(this, query + Integer.toString(businesses.size()), Toast.LENGTH_LONG).show();
 

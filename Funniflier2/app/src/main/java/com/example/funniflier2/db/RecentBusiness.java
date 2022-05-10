@@ -6,7 +6,7 @@ import androidx.room.PrimaryKey;
 
 @Entity
 public class RecentBusiness {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     long id;
 
     @ColumnInfo

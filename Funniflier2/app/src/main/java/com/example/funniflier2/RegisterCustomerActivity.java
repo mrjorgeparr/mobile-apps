@@ -44,6 +44,7 @@ public class RegisterCustomerActivity extends AppCompatActivity implements View.
                 Intent intent = new Intent(this, HomeActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putLong("user_id", user.getId());
+                intent.putExtras(bundle);
                 startActivity(intent);
             } catch (Exception e){
                 Toast.makeText(this, "Email already used", Toast.LENGTH_LONG).show();
