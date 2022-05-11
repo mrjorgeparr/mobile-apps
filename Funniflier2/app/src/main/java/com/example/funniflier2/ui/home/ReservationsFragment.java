@@ -31,7 +31,7 @@ public class ReservationsFragment extends Fragment {
     //private static final String ARG_SECTION_NUMBER = "section_number";
     private PageViewModel pageViewModel;
     private FragmentHomeBinding binding;
-    private DB db = DB.getInstance(getActivity());
+
 
 
     public static ReservationsFragment newInstance() {
@@ -53,6 +53,7 @@ public class ReservationsFragment extends Fragment {
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
 
+        DB db = DB.getInstance(getActivity());
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         TableLayout table = root.findViewById(R.id.table_business);

@@ -35,7 +35,7 @@ public class HomeBusinessActivity extends AppCompatActivity {
             HomeUtils hu = new HomeUtils(this);
             hu.setUserId(0);
 
-            List<Reservation> reservations = db.reservationDao().getUserReservations(id);
+            List<Reservation> reservations = db.reservationDao().getBusinessReservations(id);
             for(int i=0; i< reservations.size(); i++){
                 hu.putReservationOnTable(this, table, reservations.get(i));
             }

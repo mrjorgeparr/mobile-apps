@@ -37,7 +37,7 @@ public class HomeActivity extends AppCompatActivity{
     private ActivityHomeBinding binding;
     public long user_id;
     String log;
-    HomeActivity context = this;
+    public HomeActivity context = this;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -153,6 +153,7 @@ public class HomeActivity extends AppCompatActivity{
         if (item.getItemId() == R.id.businessPopUpItem){
             Intent intent2 = new Intent(this, ScannerActivity.class);
             Bundle bundle = new Bundle();
+            bundle.putLong("user_id", user_id);
             intent2.putExtras(bundle);
             this.startActivity(intent2);
         }else if (item.getTitle() == "Reservation"){

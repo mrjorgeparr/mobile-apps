@@ -30,7 +30,7 @@ import java.util.List;
     //private static final String ARG_SECTION_NUMBER = "section_number";
     private PageViewModel pageViewModel;
     private FragmentHomeBinding binding;
-    DB db = DB.getInstance(getActivity());
+
     List<Business> businesses = new ArrayList<Business>();
 
     public static RecentsFragment newInstance() {
@@ -52,6 +52,7 @@ import java.util.List;
             @NonNull LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
 
+        DB db = DB.getInstance(getActivity());
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         TableLayout table = root.findViewById(R.id.table_business);

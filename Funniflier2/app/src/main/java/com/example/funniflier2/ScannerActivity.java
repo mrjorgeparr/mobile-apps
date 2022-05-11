@@ -31,7 +31,7 @@ public class ScannerActivity extends AppCompatActivity {
                     }
                 } else {
 
-                    long business_id = Long.getLong(result.getContents());
+                    long business_id = Long.parseLong(result.getContents());
                     try{
                         Business b = db.businessDao().findById(business_id);
 
@@ -63,7 +63,7 @@ public class ScannerActivity extends AppCompatActivity {
         ScanOptions options = new ScanOptions();
         options.setCaptureActivity(AnyOrientationCaptureActivity.class);
         options.setDesiredBarcodeFormats(ScanOptions.ONE_D_CODE_TYPES);
-        options.setPrompt("Scan something");
+        options.setPrompt("Scan A Business");
         options.setOrientationLocked(false);
         options.setBeepEnabled(false);
         barcodeLauncher.launch(options);
